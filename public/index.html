@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 minimum-scale=1.0 user-scalable=no" >
+    <link rel="icon" href="./src/assets/sztu.png">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+      <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=lSZms8vUZ0bZns6rVHLWe3RQLaovokQM"></script>
+    <script>
+      (function(doc, win) {
+        setRem();
+        var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                  setRem();
+                };
+        if (!doc.addEventListener)
+          return;
+        // win.addEventListener(resizeEvt, recalc, false);
+        // doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+
+      function setRem() {
+        let docEl = document.documentElement;
+        let clientWidth = window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;
+        if (!clientWidth) {
+          return;
+        }
+        docEl.style.fontSize = 10 * (clientWidth / 1080) + 'px';
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

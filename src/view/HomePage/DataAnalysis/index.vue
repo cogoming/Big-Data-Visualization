@@ -1,0 +1,54 @@
+<template>
+  <div>
+    <div class="data-analysis">
+      <Tabs :Tabs="Tabs"/>
+      <router-view class="view-data-analysis"></router-view>
+    </div>
+  </div>
+</template>
+
+<script>
+import Tabs from '../../../components/Tabs'
+
+export default {
+  name: "index",
+  components: {Tabs},
+  data() {
+    return {
+      //配置Tab栏组件
+      Tabs:[
+        {
+          name:'传感数据可视化',
+          to:'/HomePage/DataAnalysis/SensingData'
+        },
+        {
+          name:'位置数据可视化',
+          to:'/HomePage/DataAnalysis/LocationData'
+        },
+        {
+          name:'轨迹数据可视化',
+          to:'/HomePage/DataAnalysis/TrajectoryData'
+        }
+      ]
+    }
+  }
+
+}
+</script>
+
+<style scoped>
+.data-analysis {
+  width: 92rem;
+  height: 53rem;
+  border-radius: 1rem;
+  margin: 1.5rem 0 0 2rem;
+}
+
+.view-data-analysis {
+  width: 92rem;
+  border-radius: 1rem;
+  margin: 1rem 0 0 0;
+  background: white;
+}
+
+</style>
