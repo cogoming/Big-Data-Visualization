@@ -36,13 +36,13 @@ export default {
   width: 92rem;
   height: 53rem;
   border-radius: 1rem;
-  margin: 1.5rem 0 0 2rem;
+  margin: 1.5rem 0 0 5.06rem;
+
 }
 
 .view-application-scenarios {
   width: 92rem;
   border-radius: 1rem;
   margin: 1rem 0 0 0;
-  background: white;
 }
 </style>

@@ -14,6 +14,8 @@ import GymSecurity from '../components/GymSecurity'
 import DeviceList from '../components/DeviceList'
 import DeviceEdit from '../components/DeviceEdit'
 import DeviceAdd from '../components/DeviceAdd'
+import Warning from '../components/CampusSecurity/message/Warning'
+import ImportantWarning from '../components/CampusSecurity/message/ImportantWarning'
 
 Vue.use(Router)
 
@@ -55,7 +57,21 @@ const router = new Router(({
                     children: [
                         {
                             path: '/HomePage/ApplicationScenarios/CampusSecurity',
-                            component:CampusSecurity
+                            component:CampusSecurity,
+                            children:[
+                                {
+                                    path:'/HomePage/ApplicationScenarios/CampusSecurity/Warning',
+                                    component:Warning
+                                },
+                                {
+                                    path:'/HomePage/ApplicationScenarios/CampusSecurity/ImportantWarning',
+                                    component:ImportantWarning
+                                },
+                                {
+                                    path:'',
+                                    redirect:'/HomePage/ApplicationScenarios/CampusSecurity/Warning'
+                                }
+                            ]
                         },
                         {
                             path: '/HomePage/ApplicationScenarios/GymSecurity',

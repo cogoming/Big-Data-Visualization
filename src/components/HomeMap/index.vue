@@ -48,7 +48,6 @@
             handler(){
               this.mapInit()
             },
-            immediate:true,
             deep:true
           },
           //监听设备数据变化并重新渲染地图
@@ -56,7 +55,6 @@
             handler(){
               this.mapInit()
             },
-            immediate:true,
             deep:true
           }
         }

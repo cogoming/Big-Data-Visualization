@@ -31,7 +31,7 @@
     }
     .header{
         height: 2.8rem;
-        width: 100%;
+        width: 100rem;
         background: #ffffff;
         margin: 0 0 0 0;
     }

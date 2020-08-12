@@ -49,10 +49,10 @@ export function deviceMonitoringRequest(obj) {
     let smokeData = false
     let humanData = false
     axios.get(deviceMonitoringRequestUrl).then((res) => {
-        tempData = res.data.temperature
-        humidData = res.data.humidity
-        accData = res.data.accelerate
-        illData = res.data.illumination
+        tempData = res.data.temp
+        humidData = res.data.hum
+        accData = res.data.ac
+        illData = res.data.lux
         smokeData = res.data.smog
         humanData = res.data.ray
     }).catch((err) => {
@@ -84,15 +84,15 @@ export function dataMonitoringRequest(obj) {
     axios.get(dataMonitoringRequestUrl).then((res) => {
         for (let i = 0; i < res.data.temperature_data.length; i++) {
             tempData.push(res.data.temperature_data.value)
-            let t_date = `${res.data.temperature_data.time.month}.${res.data.temperature_data.time.day}`
+            let t_date = `${res.data.temperature_data.Time.month}.${res.data.temperature_data.Time.day}`
             tempDate.push(t_date)
 
             humidData.push(res.data.humidity_data.value)
-            let h_date = `${res.data.humidity_data.time.month}.${res.data.humidity_data.time.day}`
+            let h_date = `${res.data.humidity_data.Time.month}.${res.data.humidity_data.Time.day}`
             humidDate.push(h_date)
 
             illData.push(res.data.illumination_data.value)
-            let i_date = `${res.data.illumination_data.time.month}.${res.data.illumination_data.time.day}`
+            let i_date = `${res.data.illumination_data.Time.month}.${res.data.illumination_data.Time.day}`
             illDate.push(i_date)
         }
     }).catch((err) => {
@@ -146,7 +146,7 @@ export function mapRequest(obj, BMapGL) {
     axios.get(mapRequestUrl).then((res) => {
         for (let i = 0; i < res.data.longitude.length; i++) {
             addsData.push(new BMapGL.Point(res.data.longitude[i], res.data.latitude[i]))
-            idData.push(res.data.id[i])
+            idData.push(res.data.Id[i])
         }
     }).catch((err) => {
         console.log(err)
@@ -192,7 +192,7 @@ export function getDeviceList(obj) {
 
 }
 
-//数据分析也  仪表数据可视化  获取数据绘制图表
+//数据分析页  仪表数据可视化  获取数据绘制图表
 export function getSensorData(obj) {
     let colorList=['#0872ea','red','orange','pink','#9272A3']
     let SensorDataRequestUrl = url + ''

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8" height="10" viewBox="0 0 8 10">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ff4141;
+      }
+    </style>
+  </defs>
+  <path id="UpArrow" class="cls-1" d="M9,9V4A.945.945,0,0,0,8,3H8A.945.945,0,0,0,7,4V9H4l4,4,4-4Z" transform="translate(12 13) rotate(180)"/>
+</svg>

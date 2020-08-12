@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e615f997-32d2-42d7-b0ba-a401f4d62b72" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/$CACHE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Big_Data_Visualization.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/externalDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/css/app.dc4c9234.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/Chart blue.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/Chart green.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/Chart purple.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/上升.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/下降.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/日历.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/img/添加.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/card/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/chart/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/ImportantWarning/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/Warning/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/position/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/video/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/app.6130152f.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.82ae4958.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/app.82ae4958.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e74eb5ca.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e74eb5ca.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/LED.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/LED.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/LED1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/LED1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/sztu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/sztu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/人.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/人.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/人red.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/人red.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/传感器.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/传感器.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/场景.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/场景.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/数据分析.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/数据分析.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/烟雾.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/烟雾.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/烟雾red.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/烟雾red.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/用户.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/用户.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/电机.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/电机.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/电机1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/电机1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/蜂鸣器响.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/蜂鸣器响.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/蜂鸣器响1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/蜂鸣器响1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/设备.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/设备.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/轨迹.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/轨迹.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/首页-选中.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/首页-选中.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DeviceControl/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeviceControl/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DeviceMonitoring/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeviceMonitoring/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeMap/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeMap/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePageHeader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePageHeader/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MenuList/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuList/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tabs/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tabs/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plugins/elementUi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/elementUi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomePage/ApplicationScenarios/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomePage/ApplicationScenarios/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/HomePage/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomePage/HomePage.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1fj9oYJMpH0TnESZdBDusyfgNVA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/img" />
+      <recent name="$PROJECT_DIR$/src/components/HomePage" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e615f997-32d2-42d7-b0ba-a401f4d62b72" name="Default Changelist" comment="" />
+      <created>1596720809669</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596720809669</updated>
+      <workItem from="1596720810695" duration="3989000" />
+      <workItem from="1596771828716" duration="809000" />
+      <workItem from="1596852786919" duration="17000" />
+      <workItem from="1596896736676" duration="240000" />
+      <workItem from="1596898300699" duration="421000" />
+      <workItem from="1597196982667" duration="21617000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1052" y="603" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1596733187390">
+      <screen x="0" y="23" width="2560" height="1369" />
+    </state>
+    <state x="1052" y="603" key="git4idea.remote.GitConfigureRemotesDialog/0.23.2560.1369/-1920.450.1920.1177@0.23.2560.1369" timestamp="1596733187390" />
+    <state x="945" y="336" width="670" height="676" key="search.everywhere.popup" timestamp="1597238478063">
+      <screen x="0" y="23" width="2560" height="1369" />
+    </state>
+    <state x="945" y="336" width="670" height="676" key="search.everywhere.popup/0.23.2560.1369/-1920.450.1920.1177@0.23.2560.1369" timestamp="1597238478063" />
+  </component>
+</project>

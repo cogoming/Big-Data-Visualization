@@ -2,21 +2,21 @@
     <div class="device-control">
         <div class="device-control-title">设备控制</div>
         <div class="device-control-container" style="margin: 1.5rem 0 0 0;">
-            <img class="device-icon-buzzer" src="../../assets/蜂鸣器响.svg" alt="蜂鸣器控制"/>
+            <img class="device-icon-buzzer" src="../../assets/img/蜂鸣器响.svg" alt="蜂鸣器控制"/>
             <div class="switch-container">
                 <div class="device-name">蜂鸣器控制</div>
                 <el-switch :width="this.$rem(2)" @change="control" class="device-switch" style="display: block;" v-model="BuzzerStatus" active-color="#13ce66" inactive-color="#ff4949" active-text="ON" inactive-text="OFF"></el-switch>
             </div>
         </div>
         <div class="device-control-container">
-            <img  class="device-icon-led" src="../../assets/LED.svg" alt="LED控制"/>
+            <img class="device-icon-led" src="../../assets/img/LED.svg" alt="LED控制"/>
             <div class="switch-container">
                 <div class="device-name">L E D 控制</div>
                 <el-switch :width="this.$rem(2)" @change="control" class="device-switch" style="display: block" v-model="LedStatus" active-color="#13ce66" inactive-color="#ff4949" active-text="ON" inactive-text="OFF"></el-switch>
             </div>
         </div>
         <div class="device-control-container">
-            <img class="device-icon-electric" src="../../assets/电机.svg" alt="电机控制">
+            <img class="device-icon-electric" src="../../assets/img/电机.svg" alt="电机控制">
             <div class="switch-container">
                 <div class="device-name">电 机 控 制</div>
                 <el-switch :width="this.$rem(2)" @change="control" class="device-switch" style="display: block;margin-left:1.8rem" v-model="ElectricStatus" active-color="#13ce66" inactive-color="#ff4949" active-text="ON" inactive-text="OFF"></el-switch>

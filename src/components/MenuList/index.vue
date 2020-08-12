@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="menu-icon">
-            <img src="../../assets/sztu.png" class="school"/>
+            <img src="../../assets/img/sztu.png" class="school"/>
             <div style="font-size: 1.5rem">Sztu  Bdi</div>
         </div>
         <router-link v-for="item in Menus" class="menu-list" :to="item.path" :key="item.index" active-class="menu-list-active">
@@ -18,25 +18,25 @@
               //菜单项配置  src图标位置  name名称  path路由配置
                 Menus:[{
                     name:'首页',
-                    src:require('../../assets/首页-选中.svg'),
+                    src:require('../../assets/img/首页-选中.svg'),
                     path:'/HomePage/Home'
                 },
                   {
                     name:'应用场景',
-                    src:require('../../assets/场景.svg'),
+                    src:require('../../assets/img/场景.svg'),
                     path:'/HomePage/ApplicationScenarios'
                   },
                   {
                     name:'数据分析',
-                    src:require('../../assets/数据分析.svg'),
+                    src:require('../../assets/img/数据分析.svg'),
                     path:'/HomePage/DataAnalysis'
                 },{
                     name:'设备管理',
-                    src:require('../../assets/设备.svg'),
+                    src:require('../../assets/img/设备.svg'),
                     path:'/HomePage/DeviceManagement'
                 }, {
                     name:'用户管理',
-                    src:require('../../assets/用户.svg'),
+                    src:require('../../assets/img/用户.svg'),
                     path:'/HomePage/UserManagement'
                 }],
             }

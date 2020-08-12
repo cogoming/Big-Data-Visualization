@@ -16,8 +16,8 @@
             </div>
             <div>
                 <div class="top-device-title">人体监测</div>
-                <img class="human-icon" v-if="humanStatus" src="../../assets/人red.svg" alt="烟雾" />
-                <img class="human-icon" v-else src="../../assets/人.svg" alt="烟雾" />
+                <img class="human-icon" v-if="humanStatus" src="../../assets/img/人red.svg" alt="烟雾" />
+                <img class="human-icon" v-else src="../../assets/img/人.svg" alt="烟雾" />
             </div>
         </div>
         <div class="bottom-device-container">
@@ -27,8 +27,8 @@
             </div>
             <div class="bottom-right">
                 <div class="bottom-device-title">烟雾监测</div>
-                <img class="smoke-icon" v-if="smokeStatus" src="../../assets/烟雾red.svg" alt="烟雾" />
-                <img class="smoke-icon" v-else src="../../assets/烟雾.svg" alt="烟雾" />
+                <img class="smoke-icon" v-if="smokeStatus" src="../../assets/img/烟雾red.svg" alt="烟雾" />
+                <img class="smoke-icon" v-else src="../../assets/img/烟雾.svg" alt="烟雾" />
             </div>
         </div>
     </div>

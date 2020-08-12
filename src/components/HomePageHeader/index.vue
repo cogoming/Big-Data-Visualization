@@ -6,7 +6,7 @@
         </div>
         <div class="selector-container">
           <div style="font-size: 1.1rem; margin-top: -0.5rem">数据时延：</div>
-          <el-select style="height: 2rem;width: 7rem;margin-top: -0.3rem" @change="delayChange" v-model="delay">
+          <el-select style="height: 1rem;width: 7rem; margin-top:-1.6rem" @change="delayChange" v-model="delay">
             <el-option
                   v-for="item in delayOptions"
                   :key="item.value"

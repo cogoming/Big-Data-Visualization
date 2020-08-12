@@ -6,12 +6,68 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state:{
         //数据时延
-        homePageDelay:24*60*60*1000
+        homePageDelay:24*60*60*1000,
+        warningList:[
+            {
+                name:'打架',
+                num:3,
+                time:{
+                    year:2020,
+                    month:8,
+                    day:12,
+                    h:16,
+                    m:40,
+                    s:53
+                },
+                position:{
+                    longitude:0,
+                    latitude:0,
+                },
+                viedoUrl:'',
+            },
+            {
+                name:'摔跤',
+                num:1,
+                time:{
+                    year:2020,
+                    month:8,
+                    day:13,
+                    h:16,
+                    m:20,
+                    s:11
+                },
+                position:{
+                    longitude:0,
+                    latitude:0,
+                },
+                viedoUrl:'',
+            }
+        ],
+        activeWarning:{
+            name:'打架',
+            num:3,
+            time:{
+                year:2020,
+                month:8,
+                day:12,
+                h:16,
+                m:40,
+                s:53
+            },
+            position:{
+                longitude:0,
+                latitude:0,
+            },
+            viedoUrl:'',
+        }
     },
     mutations:{
         //设置数据时延
         setHomePageDelay(state,num){
             state.homePageDelay=num
+        },
+        setActiveWarning(state,activeWarning){
+            state.activeWarning=activeWarning
         }
     },
     actions:{

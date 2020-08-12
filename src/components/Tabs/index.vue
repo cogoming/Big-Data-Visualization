@@ -20,7 +20,6 @@ export default {
 
 <style scoped>
 .tabs {
-  width: 89rem;
   padding: 1rem 1.5rem 2rem 1.5rem;
   display: flex;
   flex-direction: row;
@@ -28,6 +27,7 @@ export default {
   align-items: center;
   background: white;
   border-radius: 1rem;
+  margin: 0 8rem 0 0;
 }
 
 .tab-tittle {
