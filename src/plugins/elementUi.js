@@ -1,4 +1,4 @@
-import {Switch, Table, TableColumn, Button, Pagination, Popconfirm, Select, Option, Input, DatePicker} from 'element-ui'
+import {Switch, Table, TableColumn, Button, Pagination, Popconfirm, Option, Input, DatePicker, Select, Message, MessageBox} from 'element-ui'
 import Vue from 'vue'
 import 'element-ui/lib/theme-chalk/index.css';
 
@@ -8,12 +8,18 @@ Vue.use(TableColumn)
 Vue.use(Button)
 Vue.use(Pagination)
 Vue.use(Popconfirm)
-Vue.use(Select)
-Vue.use(Option)
 Vue.use(Input)
 Vue.use(Option)
 Vue.use(Select)
 Vue.use(DatePicker)
+Vue.component(Message.name, Message)
+
+
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
+Vue.prototype.$message = Message;
 
 
 

@@ -5,18 +5,14 @@ import DeviceManagemnet from '../view/HomePage/DeviceManagement/index'
 import UserManagement from '../view/HomePage/UserManagement/index'
 import DataAnalysis from '../view/HomePage/DataAnalysis/index'
 import Home from '../view/HomePage/Home/index'
-import SensingData from '../components/SensingData'
-import TrajectoryData from '../components/TrajectoryData'
-import LocationData from '../components/LocationData'
+import SensingData from '../components/DataAnalysis/SensingData'
+import TrajectoryData from '../components/DataAnalysis/TrajectoryData'
+import LocationData from '../components/DataAnalysis/LocationData'
 import ApplicationScenarios from '../view/HomePage/ApplicationScenarios'
-import CampusSecurity from '../components/CampusSecurity'
-import GymSecurity from '../components/GymSecurity'
-import DeviceList from '../components/DeviceList'
-import DeviceEdit from '../components/DeviceEdit'
-import DeviceAdd from '../components/DeviceAdd'
-import Warning from '../components/CampusSecurity/message/Warning'
-import ImportantWarning from '../components/CampusSecurity/message/ImportantWarning'
-
+import CampusSecurity from '../components/ApplicationScenarios/CampusSecurity'
+import GymSecurity from '../components/ApplicationScenarios/GymSecurity'
+import Warning from '../components/ApplicationScenarios/CampusSecurity/message/Warning'
+import ImportantWarning from '../components/ApplicationScenarios/CampusSecurity/message/ImportantWarning'
 Vue.use(Router)
 
 const router = new Router(({
@@ -28,24 +24,6 @@ const router = new Router(({
             children: [{
                 path: '/HomePage/DeviceManagement',
                 component: DeviceManagemnet,
-                children: [
-                    {
-                        path:'/HomePage/DeviceManagement/DeviceList',
-                        component: DeviceList
-                    },
-                    {
-                        path:'/HomePage/DeviceManagement/DeviceEdit',
-                        component: DeviceEdit
-                    },
-                    {
-                        path: '/HomePage/DeviceManagement/DeviceAdd',
-                        component: DeviceAdd
-                    },
-                    {
-                        path:'',
-                        redirect: '/HomePage/DeviceManagement/DeviceList'
-                    }
-                ]
             },
                 {
                     path: '/HomePage/Home',

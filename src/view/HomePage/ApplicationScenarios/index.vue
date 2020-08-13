@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="application-scenarios">
-      <Tabs :Tabs="Tabs"/>
+      <Tabs :Tabs="Tabs" style="width: 80.99rem"/>
       <router-view class="view-application-scenarios"></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import Tabs from '../../../components/Tabs'
+import Tabs from '../../../components/Normal/Tabs'
 
 export default {
   name: "index",

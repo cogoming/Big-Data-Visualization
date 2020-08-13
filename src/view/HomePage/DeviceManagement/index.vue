@@ -1,19 +1,16 @@
 <template>
-    <div class="device-management">
-      <router-view />
-    </div>
+  <div>
+    <DeviceList/>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "index",
-        components: {
-        },
-    }
+import DeviceList from '../../../components/DeviceManagement/DeviceList'
+export default {
+  name: "index",
+  components: {
+    DeviceList
+  },
+}
 </script>
 <style scoped>
-.device-management{
-    display: flex;
-    margin:auto;
-}
-</style>

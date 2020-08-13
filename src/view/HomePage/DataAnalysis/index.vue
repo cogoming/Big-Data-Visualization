@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="data-analysis">
-      <Tabs :Tabs="Tabs"/>
+      <Tabs :Tabs="Tabs" style="width: 89rem"/>
       <router-view class="view-data-analysis"></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import Tabs from '../../../components/Tabs'
+import Tabs from '../../../components/Normal/Tabs'
 
 export default {
   name: "index",
@@ -41,7 +41,7 @@ export default {
   width: 92rem;
   height: 53rem;
   border-radius: 1rem;
-  margin: 1.5rem 0 0 2rem;
+  margin: 1.5rem 1rem 0 2rem;
 }
 
 .view-data-analysis {

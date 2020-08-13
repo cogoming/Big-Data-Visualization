@@ -17,10 +17,10 @@
     </div>
 </template>
 <script>
-    import DataMonitoring from '../../../components/DataMonitoring'
-    import DeviceMonitoring from '../../../components/DeviceMonitoring'
-    import HomeMap from '../../../components/HomeMap'
-    import DeviceControl from '../../../components/DeviceControl'
+    import DataMonitoring from '../../../components/Home/DataMonitoring'
+    import DeviceMonitoring from '../../../components/Home/DeviceMonitoring'
+    import HomeMap from '../../../components/Home/HomeMap'
+    import DeviceControl from '../../../components/Home/DeviceControl'
     export default {
         name: "index",
         components:{
