@@ -20,8 +20,8 @@ export default new Vuex.Store({
                     s:53
                 },
                 position:{
-                    longitude:0,
-                    latitude:0,
+                    longitude:114.40555,
+                    latitude:22.707533
                 },
                 viedoUrl:'',
             },
@@ -37,8 +37,8 @@ export default new Vuex.Store({
                     s:11
                 },
                 position:{
-                    longitude:0,
-                    latitude:0,
+                    longitude:114.406527,
+                    latitude:22.708076
                 },
                 viedoUrl:'',
             }
@@ -55,11 +55,12 @@ export default new Vuex.Store({
                 s:53
             },
             position:{
-                longitude:0,
-                latitude:0,
+                longitude:114.40555,
+                latitude:22.707533
             },
             viedoUrl:'',
-        }
+        },
+        importantWarning:[]
     },
     mutations:{
         //设置数据时延
@@ -68,6 +69,12 @@ export default new Vuex.Store({
         },
         setActiveWarning(state,activeWarning){
             state.activeWarning=activeWarning
+        },
+        addImportantWarning(state,i){
+            state.importantWarning.push(state.warningList[i])
+        },
+        subImportantWarning(state,i){
+            state.importantWarning.splice(i,1)
         }
     },
     actions:{

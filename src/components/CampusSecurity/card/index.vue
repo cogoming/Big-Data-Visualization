@@ -25,7 +25,7 @@ export default {
     decimals:Number,
     name:String,
     cardStyle: Object,
-    chartSrc:Object
+    chartSrc:String
   }
 }
 </script>

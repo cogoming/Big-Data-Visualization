@@ -2,68 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e615f997-32d2-42d7-b0ba-a401f4d62b72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/$CACHE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Big_Data_Visualization.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/externalDependencies.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/css/app.dc4c9234.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/Chart blue.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/Chart green.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/Chart purple.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/上升.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/下降.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/日历.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/img/添加.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/card/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/chart/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/ImportantWarning/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/Warning/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/position/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CampusSecurity/video/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/app.6130152f.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.82ae4958.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.82ae4958.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e74eb5ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.e74eb5ca.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/1b914825be4c85c474dcd1603a8165d8.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/1b914825be4c85c474dcd1603a8165d8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/20315edc1fe8d05e3bb60c614651d859.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/20315edc1fe8d05e3bb60c614651d859.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/24de2f299e4a346258f0d44abdb7ed25.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/24de2f299e4a346258f0d44abdb7ed25.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/65fef4f6750dc4aeca45569b8e327149.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/65fef4f6750dc4aeca45569b8e327149.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/6696af5236851a3ae1e22ab155d68eaa.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/6696af5236851a3ae1e22ab155d68eaa.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/77736eaacac019b16a2f02db8a108412.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/77736eaacac019b16a2f02db8a108412.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a2cccac6817bd606503bf0e1b8ef5e08.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/a2cccac6817bd606503bf0e1b8ef5e08.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/e183f99fd6967d902d6ca7ee57048fac.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/e183f99fd6967d902d6ca7ee57048fac.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/016481beb66f61077f3f298a20b21d23.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/016481beb66f61077f3f298a20b21d23.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1d53afb9f9e7c25f20294097143f2527.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1d53afb9f9e7c25f20294097143f2527.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1f63e0af90a093e00ec2cc9f6f174fa9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1f63e0af90a093e00ec2cc9f6f174fa9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/24156f6da6862cf9b1c0c4c8852697bf.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/24156f6da6862cf9b1c0c4c8852697bf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/25ae75535fc409ff82821413b4093921.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/25ae75535fc409ff82821413b4093921.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2ed2a738119ed5344104e4b7beeb0ef5.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/2ed2a738119ed5344104e4b7beeb0ef5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/42933cc989437ff10a6b70059563acb9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/42933cc989437ff10a6b70059563acb9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4bcef457e1d7c3bda18d32e32a7b084a.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4bcef457e1d7c3bda18d32e32a7b084a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4d13becca644c663ce53eeb050bf3a28.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4d13becca644c663ce53eeb050bf3a28.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4ed25edc1f5d40594e95e94df8c71b6c.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/4ed25edc1f5d40594e95e94df8c71b6c.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/574d5a0768cc774d27640bb5bcbf6228.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/574d5a0768cc774d27640bb5bcbf6228.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/64b0431e87b4e91291737fcdb772321f.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/64b0431e87b4e91291737fcdb772321f.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6a3fa7887c8e1b6c4573e6abb173d012.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6a3fa7887c8e1b6c4573e6abb173d012.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6af0b1efdd11c9d19d81cd7ef6d294c7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6af0b1efdd11c9d19d81cd7ef6d294c7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6dfbeede46341937b2dc48ebbd98105b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6dfbeede46341937b2dc48ebbd98105b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6e271773c42bf2fdb8cbe41fc5362f7b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6e271773c42bf2fdb8cbe41fc5362f7b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6f59a0b500eacd589bb2fcdca89e98fd.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/6f59a0b500eacd589bb2fcdca89e98fd.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7a9a55c1da7d6af3efe39a37579296d9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/7a9a55c1da7d6af3efe39a37579296d9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/85e354e435bee1f1272ba771706a0fc8.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/85e354e435bee1f1272ba771706a0fc8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a6e49705882bad648efcb31a0a62ce6b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a6e49705882bad648efcb31a0a62ce6b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a90cd659f49b0e746746271509ed2850.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a90cd659f49b0e746746271509ed2850.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b865eb56cb54fe66040dbba16064f130.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/b865eb56cb54fe66040dbba16064f130.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c463339fed6ba66f39fecff2aa3c9dd2.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c463339fed6ba66f39fecff2aa3c9dd2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c68b84fea8369ffae121298403a5aa07.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c68b84fea8369ffae121298403a5aa07.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c6c486b45f44b74eac3f5763f0feb4c9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c6c486b45f44b74eac3f5763f0feb4c9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c9bb36f121e2034f33ff208712357c20.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c9bb36f121e2034f33ff208712357c20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c9f24c7f84da291a7c64d648b82ec8f7.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c9f24c7f84da291a7c64d648b82ec8f7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dabaac3bbd08c5cca5d8617bd67be645.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/dabaac3bbd08c5cca5d8617bd67be645.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e342546a737d9b7646565aa00ce55d13.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e342546a737d9b7646565aa00ce55d13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e37740058ee223ce932d5b0fa31944ed.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/e37740058ee223ce932d5b0fa31944ed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f3fc4d282ade5dc3cea72263c41b13de.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/f3fc4d282ade5dc3cea72263c41b13de.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/LED.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/LED.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/LED1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/LED1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/down.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/sztu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/sztu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/人.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/人.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/人red.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/人red.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/传感器.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/传感器.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/场景.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/场景.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/数据分析.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/数据分析.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/烟雾.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/烟雾.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/烟雾red.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/烟雾red.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/用户.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/用户.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/电机.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/电机.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/电机1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/电机1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/蜂鸣器响.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/蜂鸣器响.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/蜂鸣器响1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/蜂鸣器响1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/设备.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/设备.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/轨迹.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/轨迹.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/首页-选中.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/img/首页-选中.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/card/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/card/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/chart/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/chart/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DeviceControl/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeviceControl/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DeviceMonitoring/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeviceMonitoring/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/message/ImportantWarning/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/ImportantWarning/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/message/Warning/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/message/Warning/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/position/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/position/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CampusSecurity/video/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CampusSecurity/video/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeMap/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeMap/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePageHeader/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePageHeader/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MenuList/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MenuList/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tabs/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tabs/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plugins/elementUi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/plugins/elementUi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HomePage/ApplicationScenarios/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomePage/ApplicationScenarios/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/HomePage/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/HomePage/HomePage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +89,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/CampusSecurity/chart" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -112,6 +101,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/CampusSecurity/chart" />
       <recent name="$PROJECT_DIR$/src/assets/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -132,7 +122,7 @@
       <workItem from="1596852786919" duration="17000" />
       <workItem from="1596896736676" duration="240000" />
       <workItem from="1596898300699" duration="421000" />
-      <workItem from="1597196982667" duration="21617000" />
+      <workItem from="1597196982667" duration="42962000" />
     </task>
     <servers />
   </component>

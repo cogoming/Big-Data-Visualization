@@ -13,7 +13,7 @@ export default {
   name: "index",
   props:{
     //接收Tab栏配置项
-    Tabs:Object
+    Tabs:Array
   }
 }
 </script>

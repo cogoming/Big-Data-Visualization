@@ -1,13 +1,214 @@
 <template>
-  <div></div>
+  <div>
+    <div class="chart-all">
+      <div class="chart-top">
+        <div class="chart-title">预警数量</div>
+        <div class="chart-tab">
+          <div class="chart-tab-text" ref="year" @click="year">最近一年</div>
+          <div class="chart-tab-text" ref="month" @click="month">最近一个月</div>
+          <div class="chart-tab-text" ref="week" @click="week" style="border: none">最近一周</div>
+        </div>
+      </div>
+      <v-chart class="chart-echart" :options="warningOption"/>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-name: "index"
+  name: "index",
+  data(){
+    return{
+      warningOption:{
+        tooltip: {
+          trigger: 'axis',
+          formatter: '{b}<br />{a}: {c}个',
+          axisPointer: {
+            lineStyle: {
+              color:"#54D8FF"
+            },
+          },
+        },
+        xAxis: [{
+          name:'日期',
+          type: 'category',
+          splitNumber:6,
+          nameTextStyle: {
+            color: '#A1A0AE',
+            fontSize: this.$rem(0.7),
+            grid:{
+              x:this.$rem(1)
+            }
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#EFF3F6',
+            }
+          },
+          axisTick:{
+            show:false
+          },
+          splitArea: {
+            color: '#f00',
+            lineStyle: {
+              color: '#f00'
+            },
+          },
+          axisLabel: {
+            lineStyle: {
+              color: '#EFF3F6',
+            },
+            textStyle: {
+              color:'#A1A0AE',
+              fontSize:this.$rem(0.7)
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#EFF3F6'
+            }
+          },
+          boundaryGap: false,
+          data: ['周日','周一','周二','周三','周四','周五','周六'],
+
+        }],
+
+        yAxis: [{
+          name:'数量/ 个',
+          splitNumber:5,
+          max:10,
+          min:0,
+          nameTextStyle: {
+            color: "#A1A0AE",
+            fontSize: this.$rem(0.8)
+          },
+          type: 'value',
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#EFF3F6'
+            }
+          },
+          axisLine: {
+            show: true,
+            lineStyle: {
+              color: '#EFF3F6'
+            }
+          },
+          axisLabel: {
+            show: true,
+            margin: 20,
+            textStyle: {
+              color:'#A1A0AE',
+              fontSize:this.$rem(0.7)
+            }
+          },
+          axisTick: {
+            show: false,
+          },
+        }],
+        series: [{
+          name: '预警数量',
+          type: 'line',
+          smooth: true,
+          showAllSymbol: true,
+          symbol: 'circle',
+          symbolSize: this.$rem(0.5),
+          lineStyle: {
+            normal: {
+              color: "#54D8FF",
+            },
+          },
+          itemStyle: {
+            color: "#fff",
+            borderColor: "#54D8FF",
+            borderWidth: this.$rem(0.2),
+          },
+          tooltip: {
+            show: true
+          },
+          areaStyle: {
+            normal: {
+              color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                offset: 0,
+                color: 'rgba(84,216,255,1)'
+              },
+                {
+                  offset: 1,
+                  color: 'rgba(255,255,255,0)'
+                }
+              ], false),
+            }
+          },
+          data: [6,1,5,3,5,2,2]
+        }]
+      }
+    }
+  },
+  methods:{
+    notActive(){
+      this.$refs.year.style.color='#A0A0AD'
+      this.$refs.month.style.color='#A0A0AD'
+      this.$refs.week.style.color='#A0A0AD'
+    },
+    year(){
+      this.notActive()
+      this.$refs.year.style.color='#4C5566'
+      this.warningOption.yAxis[0].max=1000
+    },
+    month(){
+      this.notActive()
+      this.$refs.month.style.color='#4C5566'
+      this.warningOption.yAxis[0].max=100
+    },
+    week(){
+      this.notActive()
+      this.$refs.week.style.color='#4C5566'
+      this.warningOption.yAxis[0].max=10
+    }
+  },
+  mounted() {
+    this.week()
+  }
 }
 </script>
 
 <style scoped>
+.chart-all {
+  margin: 1.14rem 0.3rem 1rem 1.68rem;
+}
+
+.chart-top {
+  display: flex;
+  flex-direction: row;
+}
+
+.chart-title {
+  font-size: 1.21rem;
+  color: #4D4F5C;
+  font-weight: 400;
+}
+
+.chart-tab {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 0.5rem 0 30.5rem;
+}
+
+.chart-tab-text {
+  font-size: 0.81rem;
+  color: #A0A0AD;
+  padding: 0 0.2rem 0 0.3rem;
+  border-right: 0.03rem solid #A0A0AD;
+}
+.chart-echart{
+  width: 53.6rem;
+  height: 18rem;
+  margin: 0 1rem 1rem -3rem;
+}
 
 </style>

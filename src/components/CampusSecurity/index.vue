@@ -101,7 +101,7 @@ export default {
   margin-bottom: 1.35rem;
 }
 .msg{
-  height:46.73rem ;
+  height:47.73rem ;
   width: 32.27rem;
   background: white;
   margin: 0 1.35rem 0 0;
@@ -118,7 +118,7 @@ export default {
   background: white;
 }
 .chart{
-  height: 19.38rem;
+  height: 20.38rem;
   width: 50.24rem;
   background: white;
 }

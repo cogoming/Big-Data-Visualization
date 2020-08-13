@@ -1,50 +1,83 @@
 <template>
   <div>
     <div class="list">
-      <table border="0" cellpadding="0" cellspacing="0" style="overflow: scroll">
-        <tr class="list-head">
-          <td class="list-head-text">内容</td>
-          <td class="list-head-text">人数</td>
-          <td class="list-head-text">时间</td>
-        </tr>
-        <tr class="list-item" v-for="(item,index) in warningList" :key="index" @click="setActiveWarning(item)">
-          <td class="list-item-text">{{item.name}}</td>
-          <td class="list-item-text">{{item.num}}</td>
-          <td class="list-item-text">{{item.time.year}}-{{item.time.month}}-{{item.time.day}}</td>
-        </tr>
-      </table>
+        <table border="0" cellpadding="0" cellspacing="0" style="overflow: scroll">
+          <tr class="list-head">
+            <td class="list-head-text">内容</td>
+            <td class="list-head-text">人数</td>
+            <td class="list-head-text">时间</td>
+          </tr>
+          <tr class="list-item" v-for="(item,index) in warningList" :key="index" @click="setActiveWarning(item)">
+            <td class="list-item-text"><input type="checkbox" :value="index" v-if="!ifAdd" class="warn-ckb" style="margin-right: 0.36rem"/>{{ item.name }}</td>
+            <td class="list-item-text">{{ item.num }}</td>
+            <td class="list-item-text">{{ item.time.year }}-{{ item.time.month }}-{{ item.time.day }}</td>
+          </tr>
+        </table>
     </div>
     <div class="bottom">
-      <div class="addImport">
-        <img src="../../../../assets/img/添加.svg" alt="">
+      <div class="addImport" @click="addImportantWarn" v-if="ifAdd">
+        <div class="add-icon"><span style="margin-top: -0.16rem">+</span></div>
         <div class="addImport-text">新增我的重要预警</div>
       </div>
+      <button v-else class="addImport" @click="submit" style="background: #3B86FF;color: white">确定</button>
     </div>
   </div>
 </template>
 
 <script>
-import {mapState,mapMutations} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
+
 export default {
   name: "index",
-  computed:{
+  data() {
+    return {
+      ifAdd: true,
+    }
+  },
+  computed: {
     ...mapState(['warningList'])
   },
-  methods:{
-    ...mapMutations(['setActiveWarning'])
+  methods: {
+    ...mapMutations(['setActiveWarning', 'addImportantWarning']),
+    addImportantWarn() {
+      this.ifAdd = false
+    },
+    submit() {
+      this.ifAdd = true
+      var input=document.getElementsByClassName('warn-ckb')
+      for(let i=0;i<input.length;i++){
+        if(input[i].checked){
+          this.addImportantWarning(i)
+        }
+      }
+      alert('添加成功！')
+    }
   }
 }
 </script>
 
 <style scoped>
-.list{
+.add-icon{
+  height: 1.14rem;
+  width: 1.14rem;
+  border: 1px solid #3B86FF;
+  color: #3B86FF;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.2rem;
+}
+.list {
   height: 39.6rem;
 }
-.list-head{
-  background:#F5F6FA ;
+
+.list-head {
+  background: #F5F6FA;
   color: #A3A6B4;
 }
-.list-head-text{
+
+.list-head-text {
   font-size: 0.88rem;
   height: 3.04rem;
   width: 9.32rem;
@@ -52,38 +85,44 @@ export default {
   text-align: center;
   vertical-align: center;
 }
-.list-item{
+
+.list-item {
   background: white;
   color: #4D4F5C;
 }
-.list-item:hover{
+
+.list-item:hover {
   background: #F5F6FA;
 }
-.list-item-text{
+
+.list-item-text {
   height: 3.04rem;
   width: 9.32rem;
   font-size: 0.88rem;
   text-align: center;
   vertical-align: middle;
 }
-.bottom{
+
+.bottom {
   display: flex;
   flex-direction: row;
 }
-.addImport{
+
+.addImport {
   display: flex;
   flex-direction: row;
   height: 1.89rem;
-  width: 9.39rem;
+  width: 10rem;
   justify-content: center;
   align-items: center;
-  border:1px solid #3B86FF;
+  border: 1px solid #3B86FF;
   border-radius: 0.2rem;
-  margin: 0 1rem 1rem 20rem;
+  margin: 0.8rem 1rem 1rem 20rem;
 }
-.addImport-text{
-  font-size:0.88rem;
-  font-weight:400;
+
+.addImport-text {
+  font-size: 0.87rem;
+  font-weight: 400;
   color: #3B86FF;
 }
 </style>

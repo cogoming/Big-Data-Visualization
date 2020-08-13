@@ -1,6 +1,8 @@
 <template>
     <div>
+      <keep-alive>
       <div id="l-map"></div>
+      </keep-alive>
     </div>
 </template>
 <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=lSZms8vUZ0bZns6rVHLWe3RQLaovokQM"></script>

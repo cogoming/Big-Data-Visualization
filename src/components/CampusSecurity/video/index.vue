@@ -2,7 +2,10 @@
   <div>
     <div class="video-all">
       <div class="video-title">预警视频</div>
-      <video class="video-in"/>
+      <video :width="this.$rem(25)" :height="this.$rem(16.94)" controls>
+        <source :src="activeWarning.viedoUrl" type="video/mp4">
+        您的浏览器不支持 HTML5 video 标签。
+      </video>
       <div class="video-bottom">
         <div class="video-bottom-text">
           <div class="video-warning-type">{{ activeWarning.name }}</div>
@@ -38,12 +41,6 @@ export default {
   font-weight: 400;
   margin: 0 0 0.6rem 0;
   color: #4D4F5C;
-}
-
-.video-in {
-  width: 25rem;
-  height: 16.94rem;
-  background: red;
 }
 
 .video-bottom {
