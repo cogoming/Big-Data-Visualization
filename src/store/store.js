@@ -23,7 +23,7 @@ export default new Vuex.Store({
                     longitude:114.40555,
                     latitude:22.707533
                 },
-                viedoUrl:'',
+                videoUrl:'',
             },
             {
                 name:'摔跤',

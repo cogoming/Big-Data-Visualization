@@ -13,11 +13,32 @@ import CampusSecurity from '../components/ApplicationScenarios/CampusSecurity'
 import GymSecurity from '../components/ApplicationScenarios/GymSecurity'
 import Warning from '../components/ApplicationScenarios/CampusSecurity/message/Warning'
 import ImportantWarning from '../components/ApplicationScenarios/CampusSecurity/message/ImportantWarning'
+import LoginPage from '../view/LoginPage'
+import Login from '../components/LoginPage/login'
+import Register from '../components/LoginPage/register'
 Vue.use(Router)
 
 const router = new Router(({
     mode: 'history',
     routes: [
+        {
+            path:'/LoginPage',
+            component: LoginPage,
+            children: [
+                {
+                    path: '/LoginPage/Login',
+                    component: Login
+                },
+                {
+                    path: '/LoginPage/Register',
+                    component: Register
+                },
+                {
+                    path: '',
+                    redirect:'/LoginPage/Login'
+                }
+            ]
+        },
         {
             path: '/HomePage',
             component: HomePage,
@@ -91,9 +112,10 @@ const router = new Router(({
                     path: '',
                     redirect: '/HomePage/Home'
                 }]
-        }, {
+        },
+        {
             path: '/',
-            redirect: '/HomePage'
+            redirect: '/LoginPage'
         }
     ]
 }))

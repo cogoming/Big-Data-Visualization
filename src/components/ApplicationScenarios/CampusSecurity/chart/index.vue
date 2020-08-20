@@ -9,7 +9,7 @@
           <div class="chart-tab-text" ref="week" @click="week" style="border: none">最近一周</div>
         </div>
       </div>
-      <v-chart class="chart-echart" :options="warningOption"/>
+      <v-chart id="chart-echart" :options="warningOption"/>
     </div>
   </div>
 </template>
@@ -167,10 +167,17 @@ export default {
       this.notActive()
       this.$refs.week.style.color='#4C5566'
       this.warningOption.yAxis[0].max=10
+    },
+    resizeHandle(){
+      let myChart1=this.$echarts.init(document.getElementById('chart-echart'))
+      myChart1.resize()
     }
   },
   mounted() {
     this.week()
+    var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+    window.addEventListener(resizeEvt, this.resizeHandle, false);
+    document.addEventListener('DOMContentLoaded', this.resizeHandle, false);
   }
 }
 </script>
@@ -205,7 +212,7 @@ export default {
   padding: 0 0.2rem 0 0.3rem;
   border-right: 0.03rem solid #A0A0AD;
 }
-.chart-echart{
+#chart-echart{
   width: 53.6rem;
   height: 18rem;
   margin: 0 1rem 1rem -3rem;

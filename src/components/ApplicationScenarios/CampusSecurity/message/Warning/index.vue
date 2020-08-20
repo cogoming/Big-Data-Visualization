@@ -1,25 +1,27 @@
 <template>
   <div>
     <div class="list">
-        <table border="0" cellpadding="0" cellspacing="0" style="overflow: scroll">
-          <tr class="list-head">
-            <td class="list-head-text">内容</td>
-            <td class="list-head-text">人数</td>
-            <td class="list-head-text">时间</td>
-          </tr>
-          <tr class="list-item" v-for="(item,index) in warningList" :key="index" @click="setActiveWarning(item)">
-            <td class="list-item-text"><input type="checkbox" :value="index" v-if="!ifAdd" class="warn-ckb" style="margin-right: 0.36rem"/>{{ item.name }}</td>
-            <td class="list-item-text">{{ item.num }}</td>
-            <td class="list-item-text">{{ item.time.year }}-{{ item.time.month }}-{{ item.time.day }}</td>
-          </tr>
-        </table>
+      <table border="0" cellpadding="0" cellspacing="0" style="overflow: scroll">
+        <tr class="list-head">
+          <td class="list-head-text">内容</td>
+          <td class="list-head-text">人数</td>
+          <td class="list-head-text">时间</td>
+        </tr>
+        <tr class="list-item" v-for="(item,index) in warningList" :key="index" @click="setActiveWarning(item)">
+          <td class="list-item-text"><input type="checkbox" :value="index" v-if="!ifAdd" class="warn-ckb"
+                                            style="margin-right: 0.36rem"/>{{ item.name }}
+          </td>
+          <td class="list-item-text">{{ item.num }}</td>
+          <td class="list-item-text">{{ item.time.year }}-{{ item.time.month }}-{{ item.time.day }}</td>
+        </tr>
+      </table>
     </div>
     <div class="bottom">
-      <div class="addImport" @click="addImportantWarn" v-if="ifAdd">
-        <div class="add-icon"><span style="margin-top: -0.16rem">+</span></div>
+      <button class="addImport" @click="addImportantWarn" v-if="ifAdd" ref="msg_add">
+        <div class="add-icon"><span style="font-size: 1rem;margin-top: 0.1rem">+</span></div>
         <div class="addImport-text">新增我的重要预警</div>
-      </div>
-      <button v-else class="addImport" @click="submit" style="background: #3B86FF;color: white">确定</button>
+      </button>
+      <button v-else class="addImport-submit" @click="submit">确定</button>
     </div>
   </div>
 </template>
@@ -44,20 +46,20 @@ export default {
     },
     submit() {
       this.ifAdd = true
-      var input=document.getElementsByClassName('warn-ckb')
-      for(let i=0;i<input.length;i++){
-        if(input[i].checked){
+      var input = document.getElementsByClassName('warn-ckb')
+      for (let i = 0; i < input.length; i++) {
+        if (input[i].checked) {
           this.addImportantWarning(i)
         }
       }
       alert('添加成功！')
-    }
+    },
   }
 }
 </script>
 
 <style scoped>
-.add-icon{
+.add-icon {
   height: 1.14rem;
   width: 1.14rem;
   border: 1px solid #3B86FF;
@@ -68,6 +70,7 @@ export default {
   align-items: center;
   margin-right: 0.2rem;
 }
+
 .list {
   height: 39.6rem;
 }
@@ -118,11 +121,40 @@ export default {
   border: 1px solid #3B86FF;
   border-radius: 0.2rem;
   margin: 0.8rem 1rem 1rem 20rem;
+  background: white;
+}
+.addImport:hover{
+  border-color: #3B6BB7;
+}
+.addImport:hover div{
+  border-color: #3B6BB7;
+  color: #3B6BB7;
 }
 
 .addImport-text {
   font-size: 0.87rem;
   font-weight: 400;
   color: #3B86FF;
+}
+.addImport-submit{
+  display: flex;
+  flex-direction: row;
+  height: 1.89rem;
+  width: 10rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #3B86FF;
+  border-radius: 0.2rem;
+  margin: 0.8rem 1rem 1rem 20rem;
+  background: #3B86FF;
+  color: white;
+}
+.addImport-submit:hover{
+  background: #266edd;
+}
+
+.warn-ckb {
+  height: 0.6rem;
+  width: 0.6rem;
 }
 </style>

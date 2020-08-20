@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="data-analysis">
-      <Tabs :Tabs="Tabs" style="width: 89rem"/>
+      <Tabs :Tabs="Tabs" style="width: 80.99rem"/>
       <router-view class="view-data-analysis"></router-view>
     </div>
   </div>
@@ -38,14 +38,14 @@ export default {
 
 <style scoped>
 .data-analysis {
-  width: 92rem;
+  width: 80.99rem;
   height: 53rem;
   border-radius: 1rem;
-  margin: 1.5rem 1rem 0 2rem;
+  margin: 1.5rem 1rem 0 5.06rem;
 }
 
 .view-data-analysis {
-  width: 92rem;
+  width: 83.99rem;
   border-radius: 1rem;
   margin: 1rem 0 0 0;
   background: white;

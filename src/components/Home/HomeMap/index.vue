@@ -21,19 +21,19 @@
         methods:{
           //地图初始化
           mapInit(){
-            var map = new BMapGL.Map("l-map");
-            map.centerAndZoom(new BMapGL.Point(114.40555,22.707533), 19);
+            let map = new BMapGL.Map("l-map");
+            map.centerAndZoom(new BMapGL.Point(114.40555,22.707533), 17);
             map.enableScrollWheelZoom(true);
             map.setHeading(0);
-            map.setTilt(73);
-            var scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+            map.setTilt(0);
+            let scaleCtrl = new BMapGL.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT });  // 添加比例尺控件
             map.addControl(scaleCtrl);
-            var zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+            let zoomCtrl = new BMapGL.ZoomControl({anchor: BMAP_ANCHOR_TOP_RIGHT });  // 添加缩放控件
             map.addControl(zoomCtrl);
-            var navi3DCtrl = new BMapGL.NavigationControl3D();  // 添加3D控件
+            let navi3DCtrl = new BMapGL.NavigationControl3D();  // 添加3D控件
             map.addControl(navi3DCtrl);
             for(var i = 0; i<this.adds.length; i++){
-              var marker = new BMapGL.Marker(this.adds[i]);
+              let marker = new BMapGL.Marker(this.adds[i]);
               map.addOverlay(marker);
               marker.setLabel(new BMapGL.Label("设备ID:</br>"+this.deviceId[i],{offset:new BMapGL.Size(15,-50)}));
             }

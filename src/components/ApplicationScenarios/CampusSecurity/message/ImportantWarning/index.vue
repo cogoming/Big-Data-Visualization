@@ -17,11 +17,11 @@
       </form>
     </div>
     <div class="bottom">
-      <div class="addImport" @click="subImportantWarn" v-if="ifSub">
-        <div class="sub-icon"><span style="margin-top: -0.16rem">-</span></div>
+      <button class="addImport" @click="subImportantWarn" v-if="ifSub">
+        <div class="sub-icon"><span style="font-size: 1rem;margin-top: -0.1rem">-</span></div>
         <div class="addImport-text">删除我的重要预警</div>
-      </div>
-      <button v-else class="addImport" @click="submit" style="background: #3B86FF;color: white">确定</button>
+      </button>
+      <button v-else class="addImport-submit" @click="submit" >确定</button>
     </div>
   </div>
 </template>
@@ -120,11 +120,39 @@ export default {
   border: 1px solid #3B86FF;
   border-radius: 0.2rem;
   margin: 0.8rem 1rem 1rem 20rem;
+  background: white;
 }
 
 .addImport-text {
   font-size: 0.87rem;
   font-weight: 400;
   color: #3B86FF;
+}
+.addImport:hover{
+  border-color: #3B6BB7;
+}
+.addImport:hover div{
+  border-color: #3B6BB7;
+  color: #3B6BB7;
+}
+.addImport-submit{
+  display: flex;
+  flex-direction: row;
+  height: 1.89rem;
+  width: 10rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #3B86FF;
+  border-radius: 0.2rem;
+  margin: 0.8rem 1rem 1rem 20rem;
+  background: #3B86FF;
+  color: white;
+}
+.addImport-submit:hover{
+  background: #266edd;
+}
+.ipt-warn-ckb{
+  height: 0.6rem;
+  width: 0.6rem;
 }
 </style>

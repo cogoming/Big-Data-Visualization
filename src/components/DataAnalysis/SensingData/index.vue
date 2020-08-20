@@ -21,12 +21,12 @@
             <div class="selector-tittle">设备节点：</div>
             <el-select
                 class="picker"
-                v-model="group.device">
+                v-model="group.deviceId">
               <el-option
                   class="picker"
                   v-for="item in deviceList"
                   :key="item.index"
-                  :value="item.device"
+                  :value="item.deviceID"
                   :disabled="item.disabled">
               </el-option>
             </el-select>
@@ -42,24 +42,25 @@
                 range-separator="至"
                 start-placeholder="开始日期"
                 end-placeholder="结束日期"
-                :picker-options="datePickerOptions">
+                value-format="yyyy-MM-dd"
+                :picker-options="datePickerOptions"
+            >
             </el-date-picker>
           </div>
         </div>
       </div>
       <button class="query" @click="getData">查询</button>
-      <button class="add" @click="add" >+</button>
+      <button class="add" @click="add">+</button>
       <button class="add" @click="sub">-</button>
     </div>
     <div class="bottom-view">
-      <v-chart class="data-chart" :options="chartOption"/>
+      <v-chart id="data-chart" :options="chartOption"/>
     </div>
   </div>
 </template>
 
 <script>
-
-import {getDeviceList,getSensorData} from '../../../api/request'
+import {getDeviceList, getSensorData} from '../../../api/request'
 
 export default {
   name: "index",
@@ -68,9 +69,9 @@ export default {
       //设备列表 待请求数据赋值
       //数据结构：
       // {
-      //   device: '123',
-      //       sensorList: ['温度', '湿度', '光照'],
-      //     disabled: false
+      //   deviceID: '123',
+      //   sensorList: ['温度', '湿度', '光照'],
+      //   disabled: false
       // }
       deviceList: [],
       //选择的设备
@@ -86,6 +87,16 @@ export default {
       sensorType: '',
       //日期挂载变量
       dateValue: '',
+      startTime: {
+        year: '',
+        month: '',
+        day: ''
+      },
+      endTime: {
+        year: '',
+        month: '',
+        day: ''
+      },
       //日期选择器配置项
       datePickerOptions: {
         shortcuts: [{
@@ -120,7 +131,7 @@ export default {
           text: '',
           textStyle: {
             align: 'center',
-            color: '#0872ea',
+            color: '#54D8FF',
             fontSize: this.$rem(1),
             fontWeight: this.$rem(25)
           },
@@ -140,27 +151,10 @@ export default {
         },
         tooltip: {
           trigger: 'axis',
-          formatter: '{b}<br />{a}: {c}℃',
+          formatter: '{b}<br />{a}: {c} ℃',
           axisPointer: {
             lineStyle: {
-              color: {
-                type: 'linear',
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [{
-                  offset: 0,
-                  color: 'rgba(0, 255, 233,0)'
-                }, {
-                  offset: 0.5,
-                  color: 'rgba(255, 255, 255,1)',
-                }, {
-                  offset: 1,
-                  color: 'rgba(0, 255, 233,0)'
-                }],
-                global: false
-              }
+              color: "#54D8FF"
             },
           },
         },
@@ -176,34 +170,44 @@ export default {
           name: '日期',
           splitNumber: 8,
           nameTextStyle: {
-            color: '#0872ea',
-            fontSize: this.$rem(0.7)
+            color: '#A1A0AE',
+            fontSize: this.$rem(0.7),
+            grid: {
+              x: this.$rem(1)
+            }
           },
           axisLine: {
             show: true,
             lineStyle: {
-              color: '#0872ea'
+              color: '#EFF3F6',
             }
           },
           splitArea: {
-            // show: true,
-            color: 'black',
+            color: '#f00',
             lineStyle: {
               color: '#f00'
             },
           },
-          axisLabel: {
-            color: '#0872ea',
-            textStyle: {
-              color: '#0872ea',
-              fontSize: this.$rem(0.7)
-            },
-          },
-          splitLine: {
+          axisTick: {
             show: false
           },
+          axisLabel: {
+            lineStyle: {
+              color: '#EFF3F6',
+            },
+            textStyle: {
+              color: '#A1A0AE',
+              fontSize: this.$rem(0.7)
+            }
+          },
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: '#EFF3F6'
+            }
+          },
           boundaryGap: false,
-          data:[],
+          data: [],
 
         }],
 
@@ -211,8 +215,8 @@ export default {
           type: 'value',
           name: '',
           nameTextStyle: {
-            color: '#0872ea',
-            fontSize: this.$rem(0.7)
+            color: "#A1A0AE",
+            fontSize: this.$rem(0.8)
           },
           min: null,
           max: null,
@@ -220,29 +224,28 @@ export default {
           splitLine: {
             show: true,
             lineStyle: {
-              color: 'rgba(255,255,255,0.1)'
+              color: '#EFF3F6'
             }
           },
           axisLine: {
             show: true,
             lineStyle: {
-              color: '#0872ea',
+              color: '#EFF3F6'
             }
           },
           axisLabel: {
             show: true,
             margin: this.$rem(0.8),
             textStyle: {
-              color: '#0872ea',
+              color: '#A1A0AE',
               fontSize: this.$rem(0.7)
-            },
+            }
           },
           axisTick: {
-            show: true,
+            show: false,
           },
         },],
-        series: [
-        ]
+        series: []
       }
     }
   },
@@ -263,44 +266,124 @@ export default {
         this.select.pop()
       }
     },
-    getData(){
+    getData() {
       getSensorData(this)
+    },
+    resizeHandle() {
+      let myChart1 = this.$echarts.init(document.getElementById('data-chart'))
+      myChart1.resize()
+    },
+    addSeries(chartData) {
+      let colorList = ['#54D8FF', 'red', 'orange', 'pink', '#9272A3']
+      this.chartOption.series = []
+      for (let i = 0; i < chartData.length; i++) {
+        let _data = [],
+            _date = []
+        chartData[i].data.forEach((item) => {
+          _data.push(item.value)
+          _date.push(item.Time.month + '.' + item.Time.day)
+        })
+        this.chartOption.series.push(
+            {
+              name: chartData[i].deviceId,
+              type: 'line',
+              smooth: true, //是否平滑
+              showAllSymbol: true,
+              symbol: 'circle',
+              showSymbol: false,
+              symbolSize: this.$rem(0.1),
+              lineStyle: {
+                normal: {
+                  color: colorList[i],
+                  shadowColor: colorList[i],
+                  shadowBlur: 0,
+                  shadowOffsetY: 0,
+                  shadowOffsetX: 0,
+                  width: this.$rem(0.12)
+                },
+              },
+              label: {
+                show: true,
+                position: 'top',
+                textStyle: {
+                  color: colorList[i],
+                  fontSize: this.$rem(0.7)
+                }
+              },
+
+              itemStyle: {
+                color: colorList[i],
+              },
+              tooltip: {
+                show: true,
+              },
+              data: _data
+            }
+        )
+        this.chartOption.xAxis[0].data = _date
+      }
     }
   },
   watch: {
     //监听传感器类型并及时禁止选择无此传感器的设备
-    sensorType:{
-      handler(newValue){
-        for (let i=0;i<this.deviceList.length;i++) {
+    sensorType: {
+      handler(newValue) {
+        console.log(this.dateValue)
+        for (let i = 0; i < this.deviceList.length; i++) {
           if (this.deviceList[i].sensorList.includes(newValue)) {
             this.deviceList[i].disabled = false
           } else {
             this.deviceList[i].disabled = true
           }
         }
-        if(newValue=='温度'){
-          this.chartOption.yAxis[0].name='温度/ ℃'
-          this.chartOption.yAxis[0].min=0
-          this.chartOption.yAxis[0].max=50
-          this.chartOption.yAxis[0].splitNumber=5
-        }else if(newValue=='湿度'){
-          this.chartOption.yAxis[0].name='湿度/ %'
-          this.chartOption.yAxis[0].min=0
-          this.chartOption.yAxis[0].max=100
-          this.chartOption.yAxis[0].splitNumber=5
-        }else if(newValue=='光照'){
-          this.chartOption.yAxis[0].name='光照/ Lux'
-          this.chartOption.yAxis[0].min=0
-          this.chartOption.yAxis[0].max=10000
-          this.chartOption.yAxis[0].splitNumber=5
+        if (newValue == '温度') {
+          this.chartOption.yAxis[0].name = '温度/ ℃'
+          this.chartOption.yAxis[0].min = 0
+          this.chartOption.yAxis[0].max = 50
+          this.chartOption.yAxis[0].splitNumber = 5
+          this.chartOption.tooltip.formatter = '{b}<br />{a}: {c} ℃'
+        } else if (newValue == '湿度') {
+          this.chartOption.yAxis[0].name = '湿度/ %'
+          this.chartOption.yAxis[0].min = 0
+          this.chartOption.yAxis[0].max = 100
+          this.chartOption.yAxis[0].splitNumber = 5
+          this.chartOption.tooltip.formatter = '{b}<br />{a}: {c} %'
+        } else if (newValue == '光照') {
+          this.chartOption.yAxis[0].name = '光照/ Lux'
+          this.chartOption.yAxis[0].min = 0
+          this.chartOption.yAxis[0].max = 10000
+          this.chartOption.yAxis[0].splitNumber = 5
+          this.chartOption.tooltip.formatter = '{b}<br />{a}: {c} Lux'
         }
       },
       immediate: true
+    },
+    dateValue: {
+      handler(newValue) {
+
+        let start = newValue[0].split('-')
+        let end = newValue[1].split('-')
+
+        this.startTime.year = start[0]
+        this.startTime.month = start[1]
+        this.startTime.day = start[2]
+
+        this.endTime.year = end[0]
+        this.endTime.month = end[1]
+        this.endTime.day = end[2]
+
+      },
+      immediate: true,
+      deep: true
     }
   },
   mounted() {
     //页面挂载即请求设备列表数据
     getDeviceList(this)
+    var resizeEvt1 = 'orientationchange' in window ? 'orientationchange' : 'resize'
+    window.addEventListener(resizeEvt1, this.resizeHandle, false);
+    document.addEventListener('DOMContentLoaded', this.resizeHandle, false);
+
   }
 }
 </script>
@@ -314,7 +397,7 @@ export default {
 .selector-container {
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 4rem;
+  margin: 0 0 0 2rem;
 }
 
 .group-selector {
@@ -325,12 +408,12 @@ export default {
 .selector {
   display: flex;
   flex-direction: row;
-  margin: 2rem 3rem 0 1rem;
+  margin: 2rem 2rem 0 1rem;
   align-items: center;
 }
 
 .selector-tittle {
-  margin: 0 1rem 0 0;
+  margin: 0 0 0 0;
 }
 
 .add {
@@ -362,10 +445,10 @@ export default {
   margin: 0 1rem 0 0;
 }
 
-.data-chart {
+#data-chart {
   height: 36rem;
-  width: 88rem;
-  margin: 0 0 0 0rem;
+  width: 80rem;
+  margin: 0 0 0 1rem;
 }
 
 .query {
@@ -381,12 +464,13 @@ export default {
   border-radius: 0.5rem;
   margin: 2rem 1rem 0 0;
 }
-.picker{
-  width: 8rem;
-  height: 2rem;
+
+.picker {
+  width: 10rem;
 }
-.date-picker{
-  .el-input__inner{
+
+.date-picker {
+  .el-input__inner {
     width: 5rem;
     height: 2rem;
   }

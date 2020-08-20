@@ -4,7 +4,7 @@ import router from './router/router'
 import store from './store/store'
 import VueECharts from 'vue-echarts'
 import ECharts from 'echarts'
-import './plugins/elementUi'
+import './plugins/plugins'
 import rem from './rem'
 
 Vue.config.productionTip = false

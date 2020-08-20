@@ -2,8 +2,8 @@
   <div>
     <div class="video-all">
       <div class="video-title">预警视频</div>
-      <video :width="this.$rem(25)" :height="this.$rem(16.94)" controls>
-        <source :src="activeWarning.viedoUrl" type="video/mp4">
+      <video style="width: 25rem;height: 16.94rem" controls>
+        <source :src="activeWarning.videoUrl" type="video/mp4">
         您的浏览器不支持 HTML5 video 标签。
       </video>
       <div class="video-bottom">
