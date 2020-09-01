@@ -24,6 +24,10 @@ export default {
         {
           name: '健身房安全',
           to: '/HomePage/ApplicationScenarios/GymSecurity'
+        },
+        {
+          name: '智慧云梯',
+          to: '/HomePage/ApplicationScenarios/Elevator'
         }
       ]
     }

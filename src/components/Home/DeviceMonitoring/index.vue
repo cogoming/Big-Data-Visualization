@@ -35,7 +35,7 @@
 </template>
 <script>
 import 'echarts-liquidfill'
-import {deviceMonitoringRequest} from "../../../api/request";
+import {deviceMonitoringRequest} from "../../../api/Home(main)";
 import {mapState} from 'vuex'
 
 export default {

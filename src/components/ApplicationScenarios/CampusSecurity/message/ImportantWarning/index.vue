@@ -33,10 +33,12 @@ export default {
   name: "index",
   data() {
     return {
+      //是否处于删除状态挂载变量
       ifSub: true,
     }
   },
   computed: {
+    //获取重要预警列表
     ...mapState(['importantWarning'])
   },
   methods: {
@@ -44,6 +46,7 @@ export default {
     subImportantWarn() {
       this.ifSub = false
     },
+    //获取所有选中的预警并删除
     submit() {
       this.ifSub = true
       var input=document.getElementsByClassName('ipt-warn-ckb')

@@ -28,7 +28,9 @@ export default {
   name: "index",
   data() {
     return {
+      //日期挂载变量
       dateValue: '',
+      //表示当前选择的是预警列表/重要预警列表
       activePick: 'warning'
     }
   }

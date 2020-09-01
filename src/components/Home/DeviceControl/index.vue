@@ -25,7 +25,7 @@
     </div>
 </template>
 <script>
-    import {deviceControlRequestGet,deviceControlRequestPost} from '../../../api/request'
+    import {deviceControlRequestGet,deviceControlRequestPost} from '../../../api/Home(main)'
     import {mapState} from 'vuex'
 
     export default {

@@ -26,7 +26,7 @@
                   class="picker"
                   v-for="item in deviceList"
                   :key="item.index"
-                  :value="item.deviceID"
+                  :value="item.DeviceID"
                   :disabled="item.disabled">
               </el-option>
             </el-select>
@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import {getDeviceList, getSensorData} from '../../../api/request'
+import {getDeviceList, getSensorData} from '../../../api/DataAnalysis'
 
 export default {
   name: "index",
@@ -151,7 +151,7 @@ export default {
         },
         tooltip: {
           trigger: 'axis',
-          formatter: '{b}<br />{a}: {c} ℃',
+          formatter: '',
           axisPointer: {
             lineStyle: {
               color: "#54D8FF"
@@ -195,6 +195,7 @@ export default {
             lineStyle: {
               color: '#EFF3F6',
             },
+            interval: 0,
             textStyle: {
               color: '#A1A0AE',
               fontSize: this.$rem(0.7)
@@ -265,7 +266,9 @@ export default {
       } else {
         this.select.pop()
       }
+      this.chartOption.series.pop()
     },
+    //请求数据
     getData() {
       getSensorData(this)
     },
@@ -273,15 +276,27 @@ export default {
       let myChart1 = this.$echarts.init(document.getElementById('data-chart'))
       myChart1.resize()
     },
-    addSeries(chartData) {
-      let colorList = ['#54D8FF', 'red', 'orange', 'pink', '#9272A3']
+    //将多个设备的数据加到图表里
+    addSeries(chartData, max) {
+      /*
+      * 预定不同曲线的颜色
+      * date 日期数据中转变量
+      * data 数据项中转变量
+      * _date 最多数据的设备的日期中转变量（设为x轴）
+      * */
+      let colorList = ['#54D8FF', 'red', 'orange', 'pink', '#9272A3'],
+          date,
+          data = [],
+          _date = []
       this.chartOption.series = []
       for (let i = 0; i < chartData.length; i++) {
-        let _data = [],
-            _date = []
+        data = []
         chartData[i].data.forEach((item) => {
-          _data.push(item.value)
-          _date.push(item.Time.month + '.' + item.Time.day)
+          if (i == 0) {
+            _date.push(`${item.Time.year}-${item.Time.month}-${item.Time.day}\n${item.Time.hour}:${item.Time.minute}`)
+          }
+          date = `${item.Time.year}-${item.Time.month}-${item.Time.day}\n${item.Time.hour}:${item.Time.minute}`
+          data.push([date, item.value])
         })
         this.chartOption.series.push(
             {
@@ -317,10 +332,59 @@ export default {
               tooltip: {
                 show: true,
               },
-              data: _data
+              data: data
             }
         )
-        this.chartOption.xAxis[0].data = _date
+      }
+      //如果数据项多于10条  则计算隔n条显示一个x轴数据项
+      let interval = parseInt((this.chartOption.series[0].data.length) / 10)
+      this.chartOption.xAxis[0].axisLabel.interval = 0
+      if ((this.chartOption.series[0].data.length) > 10) {
+        this.chartOption.xAxis[0].axisLabel.interval = interval
+      }
+      //设置y轴最大值
+      this.chartOption.yAxis[0].max = max * 1.3
+      //设置x轴
+      this.chartOption.xAxis[0].data = _date
+      //配置浮动提示框
+      switch (this.sensorType) {
+        case '温度':
+          this.chartOption.tooltip.formatter = function (params) {
+            var result = '温度<br/>' + params[0].name;
+            params.forEach(function (item) {
+              if (item.data) {
+                result += '<br/>' + '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>' +
+                    item.seriesName + ' : ' + item.data[1] + '℃';
+              }
+            });
+            return result;
+          }
+          break
+        case '湿度':
+          this.chartOption.tooltip.formatter = this.chartOption.tooltip.formatter = function (params) {
+            var result = '湿度<br/>' + params[0].name;
+            params.forEach(function (item) {
+
+              if (item.data) {
+                result += '<br/>' + '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>' +
+                    item.seriesName + ' : ' + item.data[1] + '%';
+              }
+            });
+            return result;
+          }
+          break
+        case '光照':
+          this.chartOption.tooltip.formatter = this.chartOption.tooltip.formatter = function (params) {
+            var result = '光照<br/>' + params[0].name;
+            params.forEach(function (item) {
+              if (item.data) {
+                result += '<br/>' + '<span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>' +
+                    item.seriesName + ' : ' + item.data[1] + 'Lux';
+              }
+            });
+            return result;
+          }
+          break
       }
     }
   },
@@ -328,9 +392,20 @@ export default {
     //监听传感器类型并及时禁止选择无此传感器的设备
     sensorType: {
       handler(newValue) {
-        console.log(this.dateValue)
+        let tep
+        switch (newValue) {
+          case '温度':
+            tep = 'temp';
+            break
+          case '湿度':
+            tep = 'hum';
+            break
+          case '光照':
+            tep = 'lux';
+            break
+        }
         for (let i = 0; i < this.deviceList.length; i++) {
-          if (this.deviceList[i].sensorList.includes(newValue)) {
+          if (this.deviceList[i].sensorList.includes(tep)) {
             this.deviceList[i].disabled = false
           } else {
             this.deviceList[i].disabled = true
@@ -341,19 +416,16 @@ export default {
           this.chartOption.yAxis[0].min = 0
           this.chartOption.yAxis[0].max = 50
           this.chartOption.yAxis[0].splitNumber = 5
-          this.chartOption.tooltip.formatter = '{b}<br />{a}: {c} ℃'
         } else if (newValue == '湿度') {
           this.chartOption.yAxis[0].name = '湿度/ %'
           this.chartOption.yAxis[0].min = 0
           this.chartOption.yAxis[0].max = 100
           this.chartOption.yAxis[0].splitNumber = 5
-          this.chartOption.tooltip.formatter = '{b}<br />{a}: {c} %'
         } else if (newValue == '光照') {
           this.chartOption.yAxis[0].name = '光照/ Lux'
           this.chartOption.yAxis[0].min = 0
           this.chartOption.yAxis[0].max = 10000
           this.chartOption.yAxis[0].splitNumber = 5
-          this.chartOption.tooltip.formatter = '{b}<br />{a}: {c} Lux'
         }
       },
       immediate: true
@@ -372,6 +444,7 @@ export default {
         this.endTime.month = end[1]
         this.endTime.day = end[2]
 
+
       },
       immediate: true,
       deep: true
@@ -380,6 +453,7 @@ export default {
   mounted() {
     //页面挂载即请求设备列表数据
     getDeviceList(this)
+    //监听窗口大小变化执行图表初始化  实现自适应
     var resizeEvt1 = 'orientationchange' in window ? 'orientationchange' : 'resize'
     window.addEventListener(resizeEvt1, this.resizeHandle, false);
     document.addEventListener('DOMContentLoaded', this.resizeHandle, false);

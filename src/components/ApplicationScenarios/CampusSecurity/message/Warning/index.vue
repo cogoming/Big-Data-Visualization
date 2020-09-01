@@ -33,10 +33,12 @@ export default {
   name: "index",
   data() {
     return {
+      //是否处于添加重要预警状态挂载变量
       ifAdd: true,
     }
   },
   computed: {
+    //获取预警列表
     ...mapState(['warningList'])
   },
   methods: {
@@ -44,6 +46,7 @@ export default {
     addImportantWarn() {
       this.ifAdd = false
     },
+    //获取选中的预警并添加到重要预警列表
     submit() {
       this.ifAdd = true
       var input = document.getElementsByClassName('warn-ckb')

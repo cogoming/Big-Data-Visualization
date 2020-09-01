@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import {dataMonitoringRequest} from '../../../api/request'
+import {dataMonitoringRequest} from '../../../api/Home(main)'
 import {mapState} from 'vuex'
 
 export default {
@@ -102,7 +102,7 @@ export default {
             }
           },
           boundaryGap: false,
-          data: ['7.22', '7.22', '7.23', '7.23', '7.24', '7.24', '7.25', '7.25'],
+          data: [],
 
         }],
 
@@ -185,7 +185,7 @@ export default {
                 ], false),
               }
             },
-            data: [26, 37, 39, 34, 28, 38, 27, 29],
+            data: [],
           },
         ]
       },
@@ -274,7 +274,7 @@ export default {
             }
           },
           boundaryGap: false,
-          data: ['7.22', '7.22', '7.23', '7.23', '7.24', '7.24', '7.25', '7.25'],
+          data: [],
 
         }],
 
@@ -357,7 +357,7 @@ export default {
                 ], false),
               }
             },
-            data: [26, 37, 39, 34, 28, 38, 27, 29],
+            data: [],
           },
         ]
       },
@@ -446,7 +446,7 @@ export default {
             }
           },
           boundaryGap: false,
-          data: ['7.22', '7.22', '7.23', '7.23', '7.24', '7.24', '7.25', '7.25'],
+          data: [],
 
         }],
 
@@ -529,7 +529,7 @@ export default {
                 ], false),
               }
             },
-            data: [3000, 4000, 5000, 3000, 2000, 4000, 7000, 8000],
+            data: [],
           },
         ]
       },

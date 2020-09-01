@@ -16,6 +16,7 @@ import ImportantWarning from '../components/ApplicationScenarios/CampusSecurity/
 import LoginPage from '../view/LoginPage'
 import Login from '../components/LoginPage/login'
 import Register from '../components/LoginPage/register'
+import Elevator from '../components/ApplicationScenarios/Elevator'
 Vue.use(Router)
 
 const router = new Router(({
@@ -75,6 +76,10 @@ const router = new Router(({
                         {
                             path: '/HomePage/ApplicationScenarios/GymSecurity',
                             component:GymSecurity
+                        },
+                        {
+                            path: '/HomePage/ApplicationScenarios/Elevator',
+                            component:Elevator
                         },
                         {
                             path: '',

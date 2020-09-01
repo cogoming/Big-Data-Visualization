@@ -26,6 +26,7 @@ import {mapState} from 'vuex'
 export default {
   name: "index",
   computed: {
+    //获取当前选择的预警信息
     ...mapState(['activeWarning'])
   }
 }

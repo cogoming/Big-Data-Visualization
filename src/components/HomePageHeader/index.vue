@@ -93,6 +93,8 @@ export default {
 .header-text-quit {
   font-size: 1.1rem;
   margin-left: 1rem;
+  color:#1990ff;
+  text-decoration: underline;
 }
 
 

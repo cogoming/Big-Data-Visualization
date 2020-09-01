@@ -20,13 +20,17 @@ export default {
   name: "index",
   data(){
     return{
+      //逆解析经纬度得出的地址变量
       position:''
     }
   },
   methods: {
+    //初始化地图
     mapinit() {
       var map = new BMap.Map("pos-map");
+      //将当前选择预警的位置当做中心
       var point = new BMap.Point(this.activeWarning.position.longitude, this.activeWarning.position.latitude);
+      //设置地图中心和缩放
       map.centerAndZoom(point, 17);
       var marker = new BMap.Marker(point);  // 创建标注
       map.addOverlay(marker);// 将标注添加到地图中
@@ -34,6 +38,7 @@ export default {
       var myGeo = new BMap.Geocoder();
       myGeo.getLocation(point,(rs)=>{
         var addComp = rs.addressComponents;
+        //逆解析地址
         this.position=addComp.province + " " + addComp.city + " " + addComp.district + " " + addComp.street + " " + addComp.streetNumber
       })
     }
@@ -45,6 +50,7 @@ export default {
     this.mapinit()
   },
   watch: {
+    //监听当前选择预警变化  并重新初始化地图
     activeWarning: {
       handler() {
         this.mapinit()

@@ -7,7 +7,7 @@
 </template>
 <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=lSZms8vUZ0bZns6rVHLWe3RQLaovokQM"></script>
 <script>
-    import {mapRequest} from '../../../api/request'
+    import {mapRequest} from '../../../api/Home(main)'
     export default {
         name: "index",
         data(){
@@ -22,8 +22,11 @@
           //地图初始化
           mapInit(){
             let map = new BMapGL.Map("l-map");
+            //设置地图中心
             map.centerAndZoom(new BMapGL.Point(114.40555,22.707533), 17);
+            //允许滚轮缩放
             map.enableScrollWheelZoom(true);
+            //设置初始视角
             map.setHeading(0);
             map.setTilt(0);
             let scaleCtrl = new BMapGL.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT });  // 添加比例尺控件
@@ -32,6 +35,7 @@
             map.addControl(zoomCtrl);
             let navi3DCtrl = new BMapGL.NavigationControl3D();  // 添加3D控件
             map.addControl(navi3DCtrl);
+            //添加提示框和标注
             for(var i = 0; i<this.adds.length; i++){
               let marker = new BMapGL.Marker(this.adds[i]);
               map.addOverlay(marker);

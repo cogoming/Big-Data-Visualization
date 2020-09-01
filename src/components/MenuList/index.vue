@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="menu-icon" style="display: flex;flex-direction: row;align-items: center">
+    <div class="menu-icon" style="display: flex;flex-direction: row;margin-top: 0.26rem">
       <img src="../../assets/img/sztu.png" class="school"/>
-      <div style="font-size: 1.3rem">Sztu Bdi</div>
+      <div style="font-size: 1.3rem">BDI-IoT</div>
     </div>
     <router-link v-for="item in Menus" class="menu-list" :to="item.path" :key="item.index"
                  active-class="menu-list-active">
@@ -50,7 +50,7 @@ export default {
 .school {
   height: 1.3rem;
   width: 1.3rem;
-  margin: 0 1rem 0 0.9rem;
+  margin: 0 0.8rem 0 0.9rem;
 }
 
 .menu-list {

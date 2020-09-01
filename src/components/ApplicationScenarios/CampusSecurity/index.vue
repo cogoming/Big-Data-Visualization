@@ -42,12 +42,16 @@ export default {
   },
   data(){
     return{
+      //顶部卡片样式
+      //upSrc  上升图标地址  downSrc下降图表地址   upColor上升文字颜色  downColor下降文字颜色
       cardStyle:{
         upSrc:require('../../../assets/img/上升.svg'),
         downSrc:require('../../../assets/img/下降.svg'),
         upColor:'color:#FF4141',
         downColor:'color:#3CC480'
       },
+      //顶部卡片样式
+      //name标题  num 显示数字 decimals显示小数  numStyle数字颜色   chartSrc图表图片地址
       cards:[
         {
           name:'今日预警',

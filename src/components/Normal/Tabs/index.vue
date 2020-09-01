@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="tabs" :style="style">
+    <div class="tabs">
       <router-link v-for="item in Tabs" active-class="tab-tittle-active" class="tab-tittle" :to="item.to" :key="item.index">{{item.name}}
       </router-link>
       <div class="border-bottom"></div>
@@ -13,8 +13,7 @@ export default {
   name: "index",
   props:{
     //接收Tab栏配置项
-    Tabs:Array,
-    style:String
+    Tabs:Array
   }
 }
 </script>

@@ -19,6 +19,7 @@ export default {
   name: "index",
   data(){
     return{
+      //预警折线图配置项
       warningOption:{
         tooltip: {
           trigger: 'axis',
@@ -148,11 +149,14 @@ export default {
     }
   },
   methods:{
+    //将所有选项文字变为未选中颜色
     notActive(){
       this.$refs.year.style.color='#A0A0AD'
       this.$refs.month.style.color='#A0A0AD'
       this.$refs.week.style.color='#A0A0AD'
     },
+    //制作点击效果
+    //先将所有选项文字变为未选中颜色  再把选中的选项文字变为选中效果的颜色
     year(){
       this.notActive()
       this.$refs.year.style.color='#4C5566'
@@ -168,13 +172,16 @@ export default {
       this.$refs.week.style.color='#4C5566'
       this.warningOption.yAxis[0].max=10
     },
+    //监听窗口变化后执行图标初始化
     resizeHandle(){
       let myChart1=this.$echarts.init(document.getElementById('chart-echart'))
       myChart1.resize()
     }
   },
   mounted() {
+    //页面挂载默认选中这一周的数据
     this.week()
+    //监听窗口变化后执行图标初始化
     var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
     window.addEventListener(resizeEvt, this.resizeHandle, false);
     document.addEventListener('DOMContentLoaded', this.resizeHandle, false);
