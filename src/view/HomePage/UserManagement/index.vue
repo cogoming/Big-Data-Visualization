@@ -1,6 +1,8 @@
 <template>
     <div>
-        用户管理页面
+        <div style="height: 51.6rem;width: 79rem;margin: 2.6rem 6.41rem 2.63rem 5.06rem;background: white">
+
+        </div>
     </div>
 </template>
 

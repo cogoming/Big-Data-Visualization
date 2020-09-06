@@ -4,6 +4,7 @@ import HomePage from '../view/HomePage/HomePage'
 import DeviceManagemnet from '../view/HomePage/DeviceManagement/index'
 import UserManagement from '../view/HomePage/UserManagement/index'
 import DataAnalysis from '../view/HomePage/DataAnalysis/index'
+import Grafana from '../view/HomePage/Grafana'
 import Home from '../view/HomePage/Home/index'
 import SensingData from '../components/DataAnalysis/SensingData'
 import TrajectoryData from '../components/DataAnalysis/TrajectoryData'
@@ -17,13 +18,17 @@ import LoginPage from '../view/LoginPage'
 import Login from '../components/LoginPage/login'
 import Register from '../components/LoginPage/register'
 import Elevator from '../components/ApplicationScenarios/Elevator'
+import {url} from "@/api/main";
+import axios from "axios";
+
 Vue.use(Router)
+
 
 const router = new Router(({
     mode: 'history',
     routes: [
         {
-            path:'/LoginPage',
+            path: '/LoginPage',
             component: LoginPage,
             children: [
                 {
@@ -36,7 +41,7 @@ const router = new Router(({
                 },
                 {
                     path: '',
-                    redirect:'/LoginPage/Login'
+                    redirect: '/LoginPage/Login'
                 }
             ]
         },
@@ -52,34 +57,38 @@ const router = new Router(({
                     component: Home
                 },
                 {
+                    path:'/HomePage/Grafana',
+                    component: Grafana
+                },
+                {
                     path: '/HomePage/ApplicationScenarios',
                     component: ApplicationScenarios,
                     children: [
                         {
                             path: '/HomePage/ApplicationScenarios/CampusSecurity',
-                            component:CampusSecurity,
-                            children:[
+                            component: CampusSecurity,
+                            children: [
                                 {
-                                    path:'/HomePage/ApplicationScenarios/CampusSecurity/Warning',
-                                    component:Warning
+                                    path: '/HomePage/ApplicationScenarios/CampusSecurity/Warning',
+                                    component: Warning
                                 },
                                 {
-                                    path:'/HomePage/ApplicationScenarios/CampusSecurity/ImportantWarning',
-                                    component:ImportantWarning
+                                    path: '/HomePage/ApplicationScenarios/CampusSecurity/ImportantWarning',
+                                    component: ImportantWarning
                                 },
                                 {
-                                    path:'',
-                                    redirect:'/HomePage/ApplicationScenarios/CampusSecurity/Warning'
+                                    path: '',
+                                    redirect: '/HomePage/ApplicationScenarios/CampusSecurity/Warning'
                                 }
                             ]
                         },
                         {
                             path: '/HomePage/ApplicationScenarios/GymSecurity',
-                            component:GymSecurity
+                            component: GymSecurity
                         },
                         {
                             path: '/HomePage/ApplicationScenarios/Elevator',
-                            component:Elevator
+                            component: Elevator
                         },
                         {
                             path: '',
@@ -124,5 +133,31 @@ const router = new Router(({
         }
     ]
 }))
+
+router.beforeEach((to, from, next) => {
+    let path = ['/LoginPage/Login', '/LoginPage/Register', '/LoginPage']
+    let check = path.includes(to.path)
+    let bool1 = false
+    if (check) {
+        next();
+    } else {
+        let reqUrl = url + '/LoginPage/TokenCertify'
+        axios.get(reqUrl).then((res) => {
+            bool1 = res.data.identify
+        }).catch((err) => {
+            console.log(err)
+        }).finally(() => {
+            switch (bool1) {
+                case true:
+                    next();
+                    break
+                case false:
+                    alert('请登录后重试！')
+                    next('/LoginPage')
+                    break
+            }
+        })
+    }
+});
 
 export default router

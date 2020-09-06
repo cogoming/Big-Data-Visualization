@@ -22,12 +22,12 @@ export default {
           to:'/HomePage/DataAnalysis/SensingData'
         },
         {
-          name:'位置数据可视化',
-          to:'/HomePage/DataAnalysis/LocationData'
-        },
-        {
           name:'轨迹数据可视化',
           to:'/HomePage/DataAnalysis/TrajectoryData'
+        },
+        {
+          name:'位置数据可视化',
+          to:'/HomePage/DataAnalysis/LocationData'
         }
       ]
     }

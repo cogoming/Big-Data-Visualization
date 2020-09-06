@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {ElevatorRequest} from '../../../api/ApplicationScenarios/Elevator'
+import {ElevatorRequest} from '../../../api/HomePage/ApplicationScenarios/Elevator'
 import {mapState} from 'vuex'
 
 export default {

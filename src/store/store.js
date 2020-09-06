@@ -60,7 +60,7 @@ export default new Vuex.Store({
             },
             viedoUrl:'',
         },
-        importantWarning:[]
+        importantWarning:[],
     },
     mutations:{
         //设置数据时延

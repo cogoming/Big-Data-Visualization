@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <div class="header-text">
-      <div style="font-size: 1.1rem;">欢迎管理员! |</div>
+      <div style="font-size: 1.1rem;">欢迎您，{{userNname}} ! |</div>
       <router-link to="/LoginPage" class="header-text-quit">退出</router-link>
     </div>
     <div class="selector-container">
@@ -25,6 +25,7 @@ export default {
   name: "index",
   data() {
     return {
+      userNname:JSON.parse(localStorage.getItem('bdi_iot_user')).nname,
       //时延变量
       delay: this.$store.state.homePageDelay,
       //数据时延选择器配置
@@ -53,7 +54,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['homePageDelay']) //Vuex引入homePageDelay（数据时延）变量
+    ...mapState(['homePageDelay','user']) //Vuex引入homePageDelay（数据时延）变量
   },
   methods: {
     ...mapMutations(['setHomePageDelay']), //Vuex引入homePageDelay（数据时延）变量更改方法
@@ -63,6 +64,8 @@ export default {
       this.$forceUpdate()
     },
     quit(){
+      localStorage.removeItem('bdi_iot_token')
+      localStorage.removeItem('bdi_iot_user')
       this.$router.push('/LoginPage')
     }
   }
@@ -83,11 +86,13 @@ export default {
 }
 
 .selector-container {
-  display: flex;
+  position: fixed;
   flex-direction: row;
   justify-content: flex-end;
-  width: 82rem;
   align-items: center;
+  left: 92.8rem;
+  display: flex;
+  top:1.2rem
 }
 
 .header-text-quit {

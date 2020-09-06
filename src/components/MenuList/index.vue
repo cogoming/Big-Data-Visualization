@@ -23,14 +23,19 @@ export default {
         path: '/HomePage/Home'
       },
         {
-          name: '应用场景',
-          src: require('../../assets/img/场景.svg'),
-          path: '/HomePage/ApplicationScenarios'
-        },
-        {
           name: '数据分析',
           src: require('../../assets/img/数据分析.svg'),
           path: '/HomePage/DataAnalysis'
+        },
+        {
+          name:'Grafana',
+          src:require('../../assets/img/仪表盘.svg'),
+          path: '/HomePage/Grafana'
+        },
+        {
+          name: '应用场景',
+          src: require('../../assets/img/场景.svg'),
+          path: '/HomePage/ApplicationScenarios'
         }, {
           name: '设备管理',
           src: require('../../assets/img/设备.svg'),

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div style="display: flex;flex-direction: column;justify-content: center;margin: 6.6rem 13.5rem 0 13.5rem">
+    <div style="display: flex;flex-direction: column;justify-content: center;margin: 6.6rem 13.5rem 0 13.5rem"
+         v-on:keyup.enter="loginReq">
       <div style="margin-left: 4.26rem">
         <div class="login-en-text">BDI-IoT</div>
         <div class="login-cn-text">物联网可视化平台</div>
@@ -8,30 +9,53 @@
       </div>
       <div class="login-id-container">
         <img src="../../../assets/img/login_people.svg" alt="" class="login-id-icon">
-        <input class="login-input" type="text" placeholder="请输入您的账号">
+        <input class="login-input" type="text" placeholder="请输入您的用户名" v-model="userName">
       </div>
       <div class="login-password-container">
         <img src="../../../assets/img/login_password.svg" alt="" class="login-password-icon">
-        <input class="login-input" type="password" placeholder="请输入您的密码">
+        <input class="login-input" type="password" placeholder="请输入您的密码" v-model="password">
       </div>
       <div style="display: flex;flex-direction: row;margin-top: 4.6rem">
-        <button @click="login" class="login-btn-lg">登入</button>
+        <button @click="loginReq" class="login-btn-lg">登入</button>
         <button @click="register" class="login-btn-rg">注册</button>
       </div>
     </div>
   </div>
 </template>
 <script>
+import {loginRequest} from '../../../api/LoginPage/login'
+
 export default {
   name: "index",
+  data() {
+    return {
+      userName: '',
+      password: ''
+    }
+  },
   methods: {
-    login() {
-      this.$router.push('/HomePage')
+    login(bool) {
+      if (bool) {
+        this.$router.push('/HomePage')
+      } else {
+        alert('用户名或者密码错误！')
+      }
     },
     register() {
       this.$router.push('/LoginPage/Register')
+    },
+    loginReq() {
+      loginRequest(this)
     }
+  },
+  created() {
+    document.addEventListener('keyup',(e)=>{
+      if(e.keyCode==13){
+        this.loginReq()
+      }
+    })
   }
+
 }
 </script>
 
@@ -41,14 +65,14 @@ export default {
   font-family: Source Sans Pro;
   font-weight: bold;
   letter-spacing: 1rem;
-  color: #43425D;
+  color: #143992;
 }
 
 .login-cn-text {
   font-size: 2.16rem;
   font-weight: bold;
   letter-spacing: 0.46rem;
-  color: #43425D;
+  color:#143992;
 }
 
 .login-text {
@@ -93,10 +117,11 @@ export default {
   flex-direction: row;
   align-items: center;
 }
-.login-btn-lg{
+
+.login-btn-lg {
   width: 12.49rem;
   height: 3.37rem;
-  background:#43425D ;
+  background:#143992;
   color: white;
   border-radius: 1.6rem;
   display: flex;
@@ -104,8 +129,9 @@ export default {
   align-items: center;
   font-size: 1.21rem;
 }
-.login-btn-rg{
-  border:0.06rem solid #43425D;
+
+.login-btn-rg {
+  border: 0.06rem solid #143992;
   border-radius: 1.6rem;
   width: 12.49rem;
   height: 3.37rem;
@@ -113,8 +139,8 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 1.21rem;
-  color: #43425D;
-  margin-left:3.66rem ;
+  color: #143992;
+  margin-left: 3.66rem;
   background: white;
 }
 </style>

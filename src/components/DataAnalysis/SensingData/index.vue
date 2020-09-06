@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import {getDeviceList, getSensorData} from '../../../api/DataAnalysis'
+import {getDeviceList, getSensorData} from '../../../api/HomePage/DataAnalysis'
 
 export default {
   name: "index",
@@ -288,14 +288,14 @@ export default {
           date,
           data = [],
           _date = []
-      this.chartOption.series = []
+      this.chartOption.series=[]
       for (let i = 0; i < chartData.length; i++) {
         data = []
         chartData[i].data.forEach((item) => {
           if (i == 0) {
-            _date.push(`${item.Time.year}-${item.Time.month}-${item.Time.day}\n${item.Time.hour}:${item.Time.minute}`)
+            _date.push(`${item.Time.year}-${item.Time.month}-${item.Time.day}\n${item.Time.hour}:${item.Time.minute}:${item.Time.second<10?'0'+item.Time.second:item.Time.second}`)
           }
-          date = `${item.Time.year}-${item.Time.month}-${item.Time.day}\n${item.Time.hour}:${item.Time.minute}`
+          date = `${item.Time.year}-${item.Time.month}-${item.Time.day}\n${item.Time.hour}:${item.Time.minute}:${item.Time.second<10?'0'+item.Time.second:item.Time.second}`
           data.push([date, item.value])
         })
         this.chartOption.series.push(
@@ -325,7 +325,19 @@ export default {
                   fontSize: this.$rem(0.7)
                 }
               },
-
+              areaStyle: {
+                normal: {
+                  color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: 'rgba(84,216,255,1)'
+                  },
+                    {
+                      offset: 1,
+                      color: 'rgba(255,255,255,0)'
+                    }
+                  ], false),
+                }
+              },
               itemStyle: {
                 color: colorList[i],
               },
@@ -343,7 +355,7 @@ export default {
         this.chartOption.xAxis[0].axisLabel.interval = interval
       }
       //设置y轴最大值
-      this.chartOption.yAxis[0].max = max * 1.3
+      this.chartOption.yAxis[0].max = parseInt(max * 1.3)
       //设置x轴
       this.chartOption.xAxis[0].data = _date
       //配置浮动提示框
@@ -361,7 +373,7 @@ export default {
           }
           break
         case '湿度':
-          this.chartOption.tooltip.formatter = this.chartOption.tooltip.formatter = function (params) {
+          this.chartOption.tooltip.formatter = function (params) {
             var result = '湿度<br/>' + params[0].name;
             params.forEach(function (item) {
 
@@ -374,7 +386,7 @@ export default {
           }
           break
         case '光照':
-          this.chartOption.tooltip.formatter = this.chartOption.tooltip.formatter = function (params) {
+          this.chartOption.tooltip.formatter = function (params) {
             var result = '光照<br/>' + params[0].name;
             params.forEach(function (item) {
               if (item.data) {
@@ -392,6 +404,7 @@ export default {
     //监听传感器类型并及时禁止选择无此传感器的设备
     sensorType: {
       handler(newValue) {
+        this.chartOption.series=[]
         let tep
         switch (newValue) {
           case '温度':
@@ -432,22 +445,30 @@ export default {
     },
     dateValue: {
       handler(newValue) {
+        this.chartOption.series=[]
 
         let start = newValue[0].split('-')
         let end = newValue[1].split('-')
 
-        this.startTime.year = start[0]
-        this.startTime.month = start[1]
-        this.startTime.day = start[2]
+        this.startTime.year = parseInt(start[0])
+        this.startTime.month = parseInt(start[1])
+        this.startTime.day = parseInt(start[2])
 
-        this.endTime.year = end[0]
-        this.endTime.month = end[1]
-        this.endTime.day = end[2]
+        this.endTime.year = parseInt(end[0])
+        this.endTime.month = parseInt(end[1])
+        this.endTime.day = parseInt(end[2])
 
 
       },
       immediate: true,
       deep: true
+    },
+    select:{
+      handler(){
+        this.chartOption.series=[]
+      },
+      deep:true,
+      immediate:true
     }
   },
   mounted() {

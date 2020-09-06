@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import {dataMonitoringRequest} from '../../../api/Home(main)'
+import {dataMonitoringRequest} from '../../../api/HomePage/Home'
 import {mapState} from 'vuex'
 
 export default {
@@ -752,16 +752,46 @@ export default {
       myChart3.resize()
     },
     //首页数据监测图表配置
-    setDataMonitoringOption(tempDate, tempData, humidDate, humidData, illDate, illData) {
+    setDataMonitoringOption(tempDate,tempData,data1, humidDate, humidData,data2, illDate, illData,data3) {
       this.temperatureOption.xAxis[0].data = tempDate
       this.temperatureOption.series[0].data = tempData
       this.humidityOption.xAxis[0].data = humidDate
       this.humidityOption.series[0].data = humidData
       this.IlluminationOption.xAxis[0].data = illDate
       this.IlluminationOption.series[0].data = illData
-      this.temperatureOption.yAxis[0].max = Math.max(...tempData) * 1.2
-      this.humidityOption.yAxis[0].max = Math.max(...humidData) * 1.2
-      this.IlluminationOption.yAxis[0].max = Math.max(...illData) * 1.2
+      this.temperatureOption.yAxis[0].max = parseInt(Math.max(...data1) * 1.3)
+      this.humidityOption.yAxis[0].max = parseInt(Math.max(...data2) * 1.3)
+      this.IlluminationOption.yAxis[0].max = parseInt(Math.max(...data3) * 1.3)
+      this.temperatureOption.tooltip.formatter = function (params) {
+        var result = ""
+        params.forEach(function (item) {
+          if (item.data) {
+            result += item.data[2]+'</br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>'
+            result +=item.seriesName + ': '+item.data[1]+' ℃</br>';
+          }
+        });
+        return result;
+      }
+      this.humidityOption.tooltip.formatter = function (params) {
+        var result = ""
+        params.forEach(function (item) {
+          if (item.data) {
+            result += item.data[2]+'</br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>'
+            result +=item.seriesName + ': '+item.data[1]+' %</br>';
+          }
+        });
+        return result;
+      }
+      this.IlluminationOption.tooltip.formatter = function (params) {
+        var result = ""
+        params.forEach(function (item) {
+          if (item.data) {
+            result += item.data[2]+'</br><span style="display:inline-block;margin-right:5px;border-radius:10px;width:9px;height:9px;background-color:' + item.color + '"></span>'
+            result +=item.seriesName + ': '+item.data[1]+' Lux</br>';
+          }
+        });
+        return result;
+      }
     }
   }
 }

@@ -11,6 +11,10 @@ export default {
   components: {},
   data() {
     return {}
+  },
+  destroyed() {
+    localStorage.removeItem('bdi_iot_token')
+    localStorage.removeItem('bdi_iot_user')
   }
 }
 </script>

@@ -35,7 +35,7 @@
 </template>
 <script>
 import 'echarts-liquidfill'
-import {deviceMonitoringRequest} from "../../../api/Home(main)";
+import {deviceMonitoringRequest} from "../../../api/HomePage/Home";
 import {mapState} from 'vuex'
 
 export default {
@@ -316,8 +316,8 @@ export default {
           name: 'X',
           type: 'gauge',
           color: ['#f00'],
-          min: -10,
-          max: 10,
+          min: -30,
+          max: 30,
           splitNumber: 10,
           radius: '40%',
           center: ["15%", "55%"],
@@ -402,8 +402,8 @@ export default {
             name: 'Y轴',
             type: 'gauge',
             color: ['#f00'],
-            min: -10,
-            max: 10,
+            min: -30,
+            max: 30,
             splitNumber: 10,
             radius: '40%',
             center: ["50%", "55%"],
@@ -484,8 +484,8 @@ export default {
             name: 'Z',
             type: 'gauge',
             color: ['#f00'],
-            min: -10,
-            max: 10,
+            min: -30,
+            max: 30,
             splitNumber: 10,
             radius: '40%',
             center: ["85%", "55%"],
@@ -697,23 +697,23 @@ export default {
       this.humidityOption.series[0].label.normal.formatter = (humidData / 100 * 100).toFixed(2) + '%'
       this.AccelerationOption.series[0].data[0].value = accData.x
       if (accData.x >= 0) {
-        this.AccelerationOption.series[0].axisLine.lineStyle.color[0][0] = 0.5 + accData.x / 20
+        this.AccelerationOption.series[0].axisLine.lineStyle.color[0][0] = 0.5 + accData.x / 60
       } else {
-        this.AccelerationOption.series[0].axisLine.lineStyle.color[0][0] = 0.5 - Math.abs(accData.x / 20)
+        this.AccelerationOption.series[0].axisLine.lineStyle.color[0][0] = 0.5 - Math.abs(accData.x / 60)
       }
       this.AccelerationOption.series[0].tooltip.formatter = 'X轴:' + accData.x + "m/s²"
       this.AccelerationOption.series[1].data[0].value = accData.y
       if (accData.y >= 0) {
-        this.AccelerationOption.series[1].axisLine.lineStyle.color[0][0] = 0.5 + accData.y / 20
+        this.AccelerationOption.series[1].axisLine.lineStyle.color[0][0] = 0.5 + accData.y / 60
       } else {
-        this.AccelerationOption.series[1].axisLine.lineStyle.color[0][0] = 0.5 - Math.abs(accData.x / 20)
+        this.AccelerationOption.series[1].axisLine.lineStyle.color[0][0] = 0.5 - Math.abs(accData.y / 60)
       }
       this.AccelerationOption.series[1].tooltip.formatter = 'Y轴:' + accData.y + "m/s²"
       this.AccelerationOption.series[2].data[0].value = accData.z
       if (accData.z >= 0) {
-        this.AccelerationOption.series[2].axisLine.lineStyle.color[0][0] = 0.5 + accData.z / 20
+        this.AccelerationOption.series[2].axisLine.lineStyle.color[0][0] = 0.5 + accData.z / 60
       } else {
-        this.AccelerationOption.series[2].axisLine.lineStyle.color[0][0] = 0.5 - Math.abs(accData.x / 20)
+        this.AccelerationOption.series[2].axisLine.lineStyle.color[0][0] = 0.5 - Math.abs(accData.z / 60)
       }
       this.AccelerationOption.series[2].tooltip.formatter = 'Z轴:' + accData.z + "m/s²"
       this.IlluminationOption.series[0].data[0].value = illData
