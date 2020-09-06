@@ -1,6 +1,6 @@
 import axios from "axios";
-// let url ='http://139.9.29.122:50002'
-let url ='http://183.239.241.108:50002'
+
+let url =''
 
 export function ElevatorRequest(obj){
     let reqUrl=url+'/get'

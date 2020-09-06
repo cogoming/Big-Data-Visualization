@@ -1,5 +1,6 @@
+
 let PROTOCL='http://'
-let HOST='183.239.241.108'
-let PORT='50004'
+let HOST='127.0.0.1'
+let PORT='6666'
 
 export let url = PROTOCL+HOST+":"+PORT
