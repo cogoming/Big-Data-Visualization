@@ -4,12 +4,14 @@ import axios from 'axios'
 export function getUserList(obj) {
     let reqUrl = url + '/HomePage/UserManagement/UserList'
     axios.get(reqUrl).then((res) => {
+        obj.userList1=[]
         obj.userList = res.data.userList
-        obj.userList1 = res.data.userList
+        for (let i=0;i<obj.userList.length;i++){
+            obj.userList[i].ifEdit=false
+        }
+        sessionStorage.setItem('bdi_iot_userList',JSON.stringify(obj.userList))
     }).catch((err) => {
         console.log(err)
-    }).finally(() => {
-        console.log('获取用户列表成功')
     })
 }
 
@@ -35,6 +37,10 @@ export function queryUserById(obj, id) {
     axios.post(reqUrl, data).then((res) => {
         if (res.data.identify) {
             obj.userList = [res.data.user]
+            for (let i=0;i<obj.userList.length;i++){
+                obj.userList[i].ifEdit=false
+            }
+            sessionStorage.setItem('bdi_iot_userList',JSON.stringify(obj.userList))
         } else {
             alert(res.data.errmsg)
         }
@@ -60,11 +66,11 @@ export function deleteUser(id) {
 export function changeUserPwd(id, pwd, newPwd) {
     let reqUrl = url + '/HomePage/UserManagement/Pwd'
     let data = {id, pwd, newPwd}
-    axios.post(reqUrl,data).then((res)=>{
-        if(res.data.identify){
+    axios.post(reqUrl, data).then((res) => {
+        if (res.data.identify) {
             alert('修改成功')
-        }else{
-            alert('修改失败!'+res.data.errmsg)
+        } else {
+            alert('修改失败!' + res.data.errmsg)
         }
     })
 }

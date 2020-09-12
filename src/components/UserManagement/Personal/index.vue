@@ -3,22 +3,34 @@
   <div class="row" style="border-bottom: 0.1rem solid #F1F1F3;padding-bottom: 2rem">
     <img src="../../../assets/img/头像.jpg" alt="用户头像" class="user-img">
     <div class="col" style="margin:0 0 0 2rem;">
-      <input type="text" class="user-nname" style="width: 8rem" :value="user.nname" v-if="ifEdit"/>
+      <input type="text" class="user-nname" style="width: 8rem" v-model="user.nname" v-if="ifEdit"/>
       <div class="user-nname" style="width: 8rem" v-else>{{ user.nname }}</div>
-      <div class="user-id" v-if="ifEdit">用户名:<input type="text" class="user-id" :value="user.id"/></div>
+      <div class="user-id row" v-if="ifEdit">
+        <div class="row" style="width: 3rem">用户名:</div>
+        <input type="text" class="user-id" v-model="user.id"/>
+      </div>
       <div class="user-id" v-else>用户名:{{ user.id }}</div>
       <div class="user-admin" v-if="user.jurisdiction==0">管理员</div>
       <div class="user-admin" style="background:#3B86FF" v-else-if="user.jurisdiction==1">V I P</div>
     </div>
     <div class="row" style="margin-top: 2.68rem">
-      <div class="user-info-container col" style="width: 6rem" v-for="(item,index) in userInfo" :key="index">
-        <div class="user-info-title">{{ item.name }}</div>
-        <input class="user-info-text" :value="item.value" v-if="ifEdit && item.name!='性别:'"/>
-        <select class="user-info-text" :value="item.value" v-else-if="ifEdit && item.name=='性别:'">
+      <div class="user-info-container col" style="width: 6rem">
+        <div class="user-info-title">姓名：</div>
+        <input class="user-info-text" v-model="user.name" v-if="ifEdit"/>
+        <div class="user-info-text" v-else>{{ user.name }}</div>
+      </div>
+      <div class="user-info-container col" style="width: 6rem">
+        <div class="user-info-title">性别：</div>
+        <select class="user-info-text" v-model="user.gender" v-if="ifEdit">
           <option value="男">男</option>
           <option value="女">女</option>
         </select>
-        <div class="user-info-text" v-else>{{ item.value }}</div>
+        <div class="user-info-text" v-else>{{ user.gender }}</div>
+      </div>
+      <div class="user-info-container col" style="width: 6rem">
+        <div class="user-info-title">手机号：</div>
+        <input class="user-info-text" v-model="user.number" v-if="ifEdit"/>
+        <div class="user-info-text" v-else>{{ user.number }}</div>
       </div>
     </div>
     <div style="width: 100%;display: flex;justify-content: flex-end">
@@ -43,20 +55,6 @@ export default {
     return {
       user: JSON.parse(localStorage.getItem('bdi_iot_user')),
       ifEdit: false,
-      userInfo: [
-        {
-          name: '姓名:',
-          value: JSON.parse(localStorage.getItem('bdi_iot_user')).name,
-        },
-        {
-          name: '性别:',
-          value: JSON.parse(localStorage.getItem('bdi_iot_user')).gender,
-        },
-        {
-          name: '手机号:',
-          value: JSON.parse(localStorage.getItem('bdi_iot_user')).number,
-        }
-      ],
     }
   },
   methods: {
@@ -69,8 +67,8 @@ export default {
     },
     confirmMy() {
       let errmsg=''
-      let bool1=/^[a-zA-Z0-9]\w{6,10}$/.test(this.user.id)
-      let bool2=/^1[3-9]\d{9}$/.test(this.user.phoneNumber)
+      let bool1=/^[a-zA-Z0-9]\w{5,10}$/.test(this.user.id)
+      let bool2=/^1[3-9]\d{9}$/.test(this.user.number)
       if(!bool1){
         errmsg+='id不合法,请输入6-10位字母数字或下划线.'
       }
@@ -82,13 +80,13 @@ export default {
       }else{
         alert('修改失败!'+errmsg)
       }
-
     },
     change(bool,errmsg){
       if(bool){
         alert('修改成功！')
         localStorage.setItem('bdi_iot_user',JSON.stringify(this.user))
         this.ifEdit = false
+        this.$router.go(0)
       }else{
         alert('修改失败！'+errmsg)
         this.user=JSON.parse(localStorage.getItem('bdi_iot_user'))

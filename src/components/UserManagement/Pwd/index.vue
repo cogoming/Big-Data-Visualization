@@ -5,25 +5,25 @@
       <div v-if="this.user.jurisdiction==0">
         <div class="row mgt">
           <div>用户名：</div>
-          <input type="text" class="pwd" :value="id"/>
+          <input type="text" class="pwd" v-model="adminId"/>
         </div>
         <div class="row mgt">
           <div>新密码：</div>
-          <input type="password" class="pwd" :value="adminPwd"/>
+          <input type="password" class="pwd" v-model="adminPwd"/>
         </div>
       </div>
       <div style="margin-top: 1rem" v-else>
         <div class="row">
           <div>原密码：</div>
-          <input type="password" class="pwd" style="margin-left: 1rem" :value="pwd"/>
+          <input type="password" class="pwd" style="margin-left: 1rem" v-model="pwd"/>
         </div>
         <div class="row mgt">
           <div>新密码：</div>
-          <input type="password" class="pwd" style="margin-left: 1rem" :value="newPwd"/>
+          <input type="password" class="pwd" style="margin-left: 1rem" v-model="newPwd"/>
         </div>
         <div class="row mgt">
           <div>确认密码：</div>
-          <input type="password" class="pwd" :value="confirmPwd"/>
+          <input type="password" class="pwd" v-model="confirmPwd"/>
         </div>
       </div>
       <button class="pwd-btn" @click="changePwd">确认修改</button>

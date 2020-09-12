@@ -14,7 +14,7 @@ export function loginRequest(obj){
         jurisdiction:'',
         name:'',
         nname:'',
-        phoneNumber:'',
+        number:'',
     }
     axios.post(requestUrl,post).then((res)=>{
         bool=res.data.identify

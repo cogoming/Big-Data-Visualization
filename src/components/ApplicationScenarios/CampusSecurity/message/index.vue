@@ -2,7 +2,7 @@
   <div>
     <div class="msg-top">
       <div class="msg-top-text">预警消息</div>
-      <router-link style="margin-left: 5rem" class="msg-button" active-class="msg-button-active"
+      <router-link style="margin-left: 2.8rem" class="msg-button" active-class="msg-button-active"
                    to="/HomePage/ApplicationScenarios/CampusSecurity/Warning" @click="()=>{this.activePick='warning'}">
         预警
       </router-link>
@@ -11,11 +11,10 @@
                    @click="()=>{this.activePick='importantWarning'}">重要预警
       </router-link>
       <el-date-picker
-          style="width: 5.8rem"
+          style="width: 8rem"
           v-model="dateValue"
           type="date"
-          placeholder="Date"
-          format="yyyy 年 MM 月 dd 日"
+          format="yyyy-MM-dd"
           align="right"
           value-format="yyyy-MM-dd">
       </el-date-picker>

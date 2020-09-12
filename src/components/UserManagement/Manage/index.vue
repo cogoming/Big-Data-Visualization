@@ -4,7 +4,7 @@
       <div class="row" style="margin-top: 1.65rem">
         <div class="query-container">
           <img src="../../../assets/img/查找.svg" style="width: 0.81rem;height: 0.81rem;margin: 0 0.4rem 0 0.4rem">
-          <input type="text" :value="inputId" placeholder="输入用户名查找" class="query-input">
+          <input type="text" v-model="inputId" placeholder="输入用户名查找" class="query-input">
         </div>
         <button class="query-btn" @click="queryUser">查询</button>
         <div style="display: flex;justify-content: flex-end;width: 100%">
@@ -27,21 +27,21 @@
               style="background: white;color: #4D4F5C" v-if="item.ifEdit">
             <td style="width: 3rem;" class="center">{{ index + 1 }}</td>
             <td style="width: 11rem" class="center"><input class="center user-input" type="text"
-                                                           :value="item.id"></td>
+                                                           v-model="item.id"></td>
             <td style="width: 11rem" class="center"><input class="center user-input" type="text"
-                                                           :value="item.name"></td>
+                                                           v-model="item.name"></td>
             <td style="width: 8rem" class="center"><input class="center user-input" type="text"
-                                                          :value="item.nname"></td>
+                                                          v-model="item.nname"></td>
             <td style="width: 11rem" class="center"><input class="center user-input" type="text"
-                                                           :value="item.number"></td>
+                                                           v-model="item.number"></td>
             <td style="width: 8rem" class="center">
-              <select name="gender" :value="item.gender" class="center user-input">
+              <select name="gender" v-model="item.gender" class="center user-input">
                 <option value="男">男</option>
                 <option value="女">女</option>
               </select>
             </td>
             <td style="width: 11rem" class="center">
-              <select name="gender" :value="item.jurisdiction" class="center user-input">
+              <select name="gender" v-model="item.jurisdiction" class="center user-input">
                 <option value="0">管理员</option>
                 <option value="1">VIP</option>
               </select>
@@ -83,8 +83,7 @@ export default {
   name: "index",
   data() {
     return {
-      userList: [JSON.parse(localStorage.getItem('bdi_iot_user'))],
-      userList1:[],
+      userList: [],
       inputId: '',
       jurisdiction:JSON.parse(localStorage.getItem('bdi_iot_user')).jurisdiction
     }
@@ -95,8 +94,8 @@ export default {
     },
     userSubmit(index) {
       let errmsg=''
-      let bool1=/^[a-zA-Z0-9]\w{6,10}$/.test(this.userList[index].id)
-      let bool2=/^1[3-9]\d{9}$/.test(this.userList[index].phoneNumber)
+      let bool1=/^[a-zA-Z0-9]\w{5,10}$/.test(this.userList[index].id)
+      let bool2=/^1[3-9]\d{9}$/.test(this.userList[index].number)
       if(!bool1){
         errmsg+='id不合法,请输入6-10位字母数字或下划线.'
       }
@@ -104,7 +103,7 @@ export default {
         errmsg+='手机号不合法,请重新输入.'
       }
       if(bool1 && bool2){
-        changeUserInfo(this,this.userList1[index].id,this.userList[index])
+        changeUserInfo(this,JSON.parse(sessionStorage.getItem('bdi_iot_userList'))[index].id,this.userList[index])
         this.userList[index].ifEdit = false
       }else{
         alert('修改失败!'+errmsg)
@@ -120,15 +119,18 @@ export default {
     },
     userEdit(index) {
       this.userList[index].ifEdit = true
+      this.$forceUpdate()
     },
     userCancel(index) {
-      this.userList=this.userList1
+      this.userList=JSON.parse(sessionStorage.getItem('bdi_iot_userList'))
       this.userList[index].ifEdit = false
+      this.$forceUpdate()
     },
     userDelete(index) {
-      let temp=confirm(`你确认要删除用户${this.userList[index].nname}吗？`)
+      let temp=confirm(`你确认要删除用户${this.userList[index].id}吗？`)
       if(temp){
         deleteUser(this.userList[index].id)
+        this.$router.go(0)
       }
     },
     getUser(){
@@ -138,7 +140,6 @@ export default {
     }
   },
   mounted() {
-    this.getUser()
   },
   watch:{
     inputId:{
@@ -159,12 +160,6 @@ export default {
   display: flex;
   flex-direction: row;
 }
-
-.col {
-  display: flex;
-  flex-direction: column;
-}
-
 
 .user-list-head {
   width: 100%;

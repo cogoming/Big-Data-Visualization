@@ -36,7 +36,7 @@ export default {
   methods: {
     login(bool) {
       if (bool) {
-        this.$router.push('/HomePage')
+        this.$router.push('/HomePage/Home')
       } else {
         alert('用户名或者密码错误！')
       }
