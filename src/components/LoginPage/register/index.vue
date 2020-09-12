@@ -125,7 +125,7 @@ export default {
     },
     checkUser(){
       this.userShow=true
-      let bool=/^[a-zA-Z0-9]\w{5,9}$/.test(this.user)
+      let bool=/^[a-zA-Z0-9]\w{6,10}$/.test(this.user)
       if(bool){
         this.userFlag=true
         this.userSrc=require('../../../assets/img/对.svg')
@@ -136,7 +136,7 @@ export default {
     },
     checkPwd(){
       this.pwdShow=true
-      let bool=/^[a-zA-Z0-9]\w{5,17}$/.test(this.pwd)
+      let bool=/^[a-zA-Z0-9]\w{6,18}$/.test(this.pwd)
       if(bool){
         this.pwdFlag=true
         this.pwdSrc=require('../../../assets/img/对.svg')

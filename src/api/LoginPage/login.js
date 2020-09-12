@@ -23,7 +23,7 @@ export function loginRequest(obj){
         user.jurisdiction=res.data.jurisdiction
         user.name=res.data.name
         user.nname=res.data.nname
-        user.phoneNumber=res.data.number
+        user.number=res.data.number
         localStorage.setItem('bdi_iot_token',res.data.token)
         localStorage.setItem('bdi_iot_user',JSON.stringify(user))
     }).catch((err)=>{

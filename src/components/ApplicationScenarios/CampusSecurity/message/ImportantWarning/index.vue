@@ -28,6 +28,7 @@
 
 <script>
 import {mapState, mapMutations} from 'vuex'
+import {getImportantWarningList,delImportantWarning} from "@/api/ApplicationScenarios/CampusSecurity"
 
 export default {
   name: "index",
@@ -42,21 +43,25 @@ export default {
     ...mapState(['importantWarning'])
   },
   methods: {
-    ...mapMutations(['setActiveWarning', 'subImportantWarning']),
+    ...mapMutations(['setActiveWarning', 'setImportantWarning']),
     subImportantWarn() {
       this.ifSub = false
     },
     //获取所有选中的预警并删除
     submit() {
+      let index=[]
       this.ifSub = true
       var input=document.getElementsByClassName('ipt-warn-ckb')
       for(let i=0;i<input.length;i++){
         if(input[i].checked){
-          this.subImportantWarning(i)
+          index.push(i)
         }
       }
-      alert('删除成功!')
+      delImportantWarning(index,this)
     }
+  },
+  mounted() {
+    getImportantWarningList(this)
   }
 }
 </script>

@@ -28,9 +28,13 @@
 
 <script>
 import {mapState, mapMutations} from 'vuex'
+import {getWarningList,addImportantWarning} from "@/api/ApplicationScenarios/CampusSecurity";
 
 export default {
   name: "index",
+  props:{
+    time:Object
+  },
   data() {
     return {
       //是否处于添加重要预警状态挂载变量
@@ -42,21 +46,34 @@ export default {
     ...mapState(['warningList'])
   },
   methods: {
-    ...mapMutations(['setActiveWarning', 'addImportantWarning']),
+    ...mapMutations(['setActiveWarning', 'setWarningList']),
     addImportantWarn() {
       this.ifAdd = false
     },
     //获取选中的预警并添加到重要预警列表
     submit() {
+      let index=[]
       this.ifAdd = true
       var input = document.getElementsByClassName('warn-ckb')
       for (let i = 0; i < input.length; i++) {
         if (input[i].checked) {
-          this.addImportantWarning(i)
+          index.push(i)
         }
       }
-      alert('添加成功！')
+      addImportantWarning(this.time,index,this)
     },
+  },
+  watch:{
+    time:{
+      handler(newVal){
+        getWarningList(this,newVal)
+      },
+      deep:true,
+      immediate:true
+    }
+  },
+  mounted() {
+    getWarningList(this,this.time)
   }
 }
 </script>

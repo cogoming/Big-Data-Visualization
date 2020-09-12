@@ -24,9 +24,9 @@ export default {
 .menu {
   background: #001628;
   width: 12rem;
+  height: 80rem;
   display: flex;
   flex-direction: column;
-  height: 70rem;
   margin: -0.7rem 0 0 -0.64rem;
 }
 

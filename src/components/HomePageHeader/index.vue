@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <div class="header-text">
-      <div style="font-size: 1.1rem;">欢迎您，{{userNname}} ! |</div>
+      <div style="font-size: 1.1rem;">欢迎您，{{ userNname }} ! |</div>
       <router-link to="/LoginPage" class="header-text-quit">退出</router-link>
     </div>
     <div class="selector-container">
@@ -14,7 +14,6 @@
             :value="item.value">
         </el-option>
       </el-select>
-
     </div>
   </div>
 </template>
@@ -25,7 +24,7 @@ export default {
   name: "index",
   data() {
     return {
-      userNname:JSON.parse(localStorage.getItem('bdi_iot_user')).nname,
+      userNname: JSON.parse(localStorage.getItem('bdi_iot_user')).nname,
       //时延变量
       delay: this.$store.state.homePageDelay,
       //数据时延选择器配置
@@ -54,7 +53,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['homePageDelay','user']) //Vuex引入homePageDelay（数据时延）变量
+    ...mapState(['homePageDelay', 'user']) //Vuex引入homePageDelay（数据时延）变量
   },
   methods: {
     ...mapMutations(['setHomePageDelay']), //Vuex引入homePageDelay（数据时延）变量更改方法
@@ -63,7 +62,7 @@ export default {
       this.setHomePageDelay(this.delay)
       this.$forceUpdate()
     },
-    quit(){
+    quit() {
       localStorage.removeItem('bdi_iot_token')
       localStorage.removeItem('bdi_iot_user')
       this.$router.push('/LoginPage')
@@ -86,19 +85,18 @@ export default {
 }
 
 .selector-container {
-  position: fixed;
+  display: flex;
   flex-direction: row;
+  width: 76.6%;
   justify-content: flex-end;
   align-items: center;
   left: 92.8rem;
-  display: flex;
-  top:1.2rem
 }
 
 .header-text-quit {
   font-size: 1.1rem;
   margin-left: 1rem;
-  color:#1990ff;
+  color: #1990ff;
   text-decoration: underline;
 }
 

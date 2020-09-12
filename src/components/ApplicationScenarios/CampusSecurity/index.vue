@@ -33,6 +33,7 @@ import Chart from './chart/index'
 import Message from './message/index'
 import Position from './position/index'
 import Video from './video/index'
+import {getData} from "@/api/ApplicationScenarios/CampusSecurity";
 
 
 export default {
@@ -76,6 +77,9 @@ export default {
         }
       ],
     }
+  },
+  mounted() {
+    getData(this)
   }
 }
 </script>

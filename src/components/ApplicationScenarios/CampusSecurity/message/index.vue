@@ -20,18 +20,46 @@
           value-format="yyyy-MM-dd">
       </el-date-picker>
     </div>
-    <router-view class="msg-view"/>
+    <router-view class="msg-view" :time="time"/>
   </div>
 </template>
 <script>
+
 export default {
   name: "index",
   data() {
     return {
       //日期挂载变量
-      dateValue: '',
+      dateValue: "",
+      time:{
+        year:0,
+        month:0,
+        day:0
+      },
       //表示当前选择的是预警列表/重要预警列表
       activePick: 'warning'
+    }
+  },
+  methods:{
+    setDateaValue(){
+      let d=new Date()
+      this.dateValue=`${d.getFullYear()}-${d.getMonth()+1<10?"0"+(d.getMonth()+1):(d.getMonth()+1)}-${d.getDate()<10?"0"+d.getDate():d.getDate()}`
+    }
+  },
+  mounted() {
+    this.setDateaValue()
+    console.log(this.time)
+  },
+  watch:{
+    dateValue:{
+      handler(newVal){
+        let res = newVal.split('-')
+        this.time.year=res[0]
+        this.time.month=res[1]
+        this.time.day=res[2]
+      },
+      deep:true,
+      immediate:true
     }
   }
 }
