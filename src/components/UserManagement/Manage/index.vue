@@ -129,8 +129,7 @@ export default {
     userDelete(index) {
       let temp=confirm(`你确认要删除用户${this.userList[index].id}吗？`)
       if(temp){
-        deleteUser(this.userList[index].id)
-        this.$router.go(0)
+        deleteUser(this.userList[index].id,this)
       }
     },
     getUser(){

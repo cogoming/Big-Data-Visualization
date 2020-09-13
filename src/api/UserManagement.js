@@ -49,12 +49,13 @@ export function queryUserById(obj, id) {
     })
 }
 
-export function deleteUser(id) {
+export function deleteUser(id,obj) {
     let reqUrl = url + '/HomePage/UserManagement/Delete'
     let data = {id}
     axios.post(reqUrl, data).then((res) => {
         if (res.data.identify) {
             alert('删除成功！')
+            obj.getUser()
         } else {
             alert('删除失败！' + res.data.errmsg)
         }

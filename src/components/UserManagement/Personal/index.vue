@@ -11,7 +11,7 @@
       </div>
       <div class="user-id" v-else>用户名:{{ user.id }}</div>
       <div class="user-admin" v-if="user.jurisdiction==0">管理员</div>
-      <div class="user-admin" style="background:#3B86FF" v-else-if="user.jurisdiction==1">V I P</div>
+      <div class="user-admin" style="background:#3B86FF;color: white" v-else-if="user.jurisdiction==1">V I P</div>
     </div>
     <div class="row" style="margin-top: 2.68rem">
       <div class="user-info-container col" style="width: 6rem">
