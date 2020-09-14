@@ -1,6 +1,7 @@
 import {url} from '../main'
 import axios from 'axios'
 
+//获取分析数据
 export function getData(obj){
     let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/DataViusal'
     axios.get(reqUrl).then((res)=>{
@@ -15,6 +16,7 @@ export function getData(obj){
         console.log(err)
     })
 }
+//获取对应日期的预警列表
 export function getWarningList(obj,time){
     let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/WarningList'
     let data={time}
@@ -24,7 +26,7 @@ export function getWarningList(obj,time){
         console.log(err)
     })
 }
-
+//获取重要预警列表
 export function getImportantWarningList(obj){
     let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/ImportantWarningList'
     axios.get(reqUrl).then((res)=>{
@@ -33,7 +35,7 @@ export function getImportantWarningList(obj){
         console.log(err)
     })
 }
-
+//添加重要预警
 export function addImportantWarning(time,index,obj){
     let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/ImportantWarningList/Add'
     let data={time,index}
@@ -48,7 +50,7 @@ export function addImportantWarning(time,index,obj){
         console.log(err)
     })
 }
-
+//删除重要预警
 export function delImportantWarning(index,obj){
     let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/ImportantWarningList/Del'
     let data={index}

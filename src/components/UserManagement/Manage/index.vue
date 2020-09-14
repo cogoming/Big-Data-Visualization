@@ -83,15 +83,20 @@ export default {
   name: "index",
   data() {
     return {
+      //用户列表数组
       userList: [],
+      //通过输入ID查找用户_id
       inputId: '',
+      //从localstorege读取用户权限
       jurisdiction:JSON.parse(localStorage.getItem('bdi_iot_user')).jurisdiction
     }
   },
   methods: {
+    //查找用户请求
     queryUser(){
       queryUserById(this,this.inputId)
     },
+    //修改用户信息后检查是否合法并提交
     userSubmit(index) {
       let errmsg=''
       let bool1=/^[a-zA-Z0-9]\w{5,10}$/.test(this.userList[index].id)
@@ -109,6 +114,7 @@ export default {
         alert('修改失败!'+errmsg)
       }
     },
+    //供给接口调用  判断是否修改成功
     change(bool,errmsg){
       if(bool){
         alert('修改成功！')
@@ -117,21 +123,25 @@ export default {
         alert('修改失败！'+errmsg)
       }
     },
+    //编辑用户发起函数
     userEdit(index) {
       this.userList[index].ifEdit = true
       this.$forceUpdate()
     },
+    //取消编辑用户  恢复用户信息
     userCancel(index) {
-      this.userList=JSON.parse(sessionStorage.getItem('bdi_iot_userList'))
+      this.userList[index]=JSON.parse(sessionStorage.getItem('bdi_iot_userList'))[index]
       this.userList[index].ifEdit = false
       this.$forceUpdate()
     },
+    //删除用户发起函数
     userDelete(index) {
       let temp=confirm(`你确认要删除用户${this.userList[index].id}吗？`)
       if(temp){
         deleteUser(this.userList[index].id,this)
       }
     },
+    //获取用户列表请求
     getUser(){
       if(this.jurisdiction==0){
         getUserList(this)
@@ -141,6 +151,7 @@ export default {
   mounted() {
   },
   watch:{
+    //若通过id查找用户的id值为空，发起获取所有用户列表请求
     inputId:{
       handler(newVal){
         if(newVal==''){

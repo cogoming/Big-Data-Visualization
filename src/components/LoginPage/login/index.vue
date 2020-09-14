@@ -29,11 +29,14 @@ export default {
   name: "index",
   data() {
     return {
+      //用户名
       userName: '',
+      //密码
       password: ''
     }
   },
   methods: {
+    //供给接口调用，判断是否登陆成功
     login(bool) {
       if (bool) {
         this.$router.push('/HomePage/Home')
@@ -41,13 +44,16 @@ export default {
         alert('用户名或者密码错误！')
       }
     },
+    //跳转到注册页面
     register() {
       this.$router.push('/LoginPage/Register')
     },
+    //发起登录请求
     loginReq() {
       loginRequest(this)
     }
   },
+  //监听回车键发起登录请求
   created() {
     document.addEventListener('keyup',(e)=>{
       if(e.keyCode==13){

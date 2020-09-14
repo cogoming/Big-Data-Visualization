@@ -40,6 +40,7 @@ export default {
     }
   },
   methods:{
+    //初始化日期选择为当前日期
     setDateaValue(){
       let d=new Date()
       this.dateValue=`${d.getFullYear()}-${d.getMonth()+1<10?"0"+(d.getMonth()+1):(d.getMonth()+1)}-${d.getDate()<10?"0"+d.getDate():d.getDate()}`
@@ -47,9 +48,9 @@ export default {
   },
   mounted() {
     this.setDateaValue()
-    console.log(this.time)
   },
   watch:{
+    //日期变化后同时变更请求参数的日期
     dateValue:{
       handler(newVal){
         let res = newVal.split('-')

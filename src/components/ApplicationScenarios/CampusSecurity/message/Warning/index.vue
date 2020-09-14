@@ -64,6 +64,7 @@ export default {
     },
   },
   watch:{
+    //请求参数一旦改变  发起预警列表请求
     time:{
       handler(newVal){
         getWarningList(this,newVal)
@@ -72,6 +73,7 @@ export default {
       immediate:true
     }
   },
+  //页面挂载发起获取预警列表请求
   mounted() {
     getWarningList(this,this.time)
   }

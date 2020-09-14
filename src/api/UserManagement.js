@@ -1,6 +1,6 @@
 import {url} from './main'
 import axios from 'axios'
-
+//获取用户列表  并存一份到sessionstorge
 export function getUserList(obj) {
     let reqUrl = url + '/HomePage/UserManagement/UserList'
     axios.get(reqUrl).then((res) => {
@@ -14,7 +14,7 @@ export function getUserList(obj) {
         console.log(err)
     })
 }
-
+//更改用户信息
 export function changeUserInfo(obj, id, user) {
     let reqUrl = url + '/HomePage/UserManagement/Manage'
     let data = {id, user}
@@ -30,7 +30,7 @@ export function changeUserInfo(obj, id, user) {
         obj.change(bool, errmsg)
     })
 }
-
+//通过id查找用户
 export function queryUserById(obj, id) {
     let reqUrl = url + '/HomePage/UserManagement/Query'
     let data = {id}
@@ -48,7 +48,7 @@ export function queryUserById(obj, id) {
         console.log(err)
     })
 }
-
+//删除用户
 export function deleteUser(id,obj) {
     let reqUrl = url + '/HomePage/UserManagement/Delete'
     let data = {id}
@@ -63,7 +63,7 @@ export function deleteUser(id,obj) {
         console.log(err)
     })
 }
-
+//更改用户密码
 export function changeUserPwd(id, pwd, newPwd) {
     let reqUrl = url + '/HomePage/UserManagement/Pwd'
     let data = {id, pwd, newPwd}

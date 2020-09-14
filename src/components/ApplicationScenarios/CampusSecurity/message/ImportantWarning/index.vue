@@ -60,6 +60,7 @@ export default {
       delImportantWarning(index,this)
     }
   },
+  //页面挂载发起获取重要预警列表请求
   mounted() {
     getImportantWarningList(this)
   }

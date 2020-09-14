@@ -78,6 +78,7 @@ export default {
       ],
     }
   },
+  //获取顶部数据分析信息
   mounted() {
     getData(this)
   }

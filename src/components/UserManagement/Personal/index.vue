@@ -53,18 +53,23 @@ export default {
   name: "index",
   data() {
     return {
+      //获取个人用户信息
       user: JSON.parse(localStorage.getItem('bdi_iot_user')),
+      //是否编辑状态变量
       ifEdit: false,
     }
   },
   methods: {
+    //开始编辑
     editMy() {
       this.ifEdit = true
     },
+    //取消编辑
     cancel(){
       this.user=JSON.parse(localStorage.getItem('bdi_iot_user'))
       this.ifEdit = false
     },
+    //确认提交修改 检查输入项合法后发起修改用户信息请求
     confirmMy() {
       let errmsg=''
       let bool1=/^[a-zA-Z0-9]\w{5,10}$/.test(this.user.id)
@@ -75,12 +80,16 @@ export default {
       if(!bool2){
         errmsg+='手机号不合法,请重新输入.'
       }
-      if(bool1 && bool2){
+      if(!this.user.name || !this.user.nname || !this.user.gender){
+        errmsg+='输入项不能为空.'
+      }
+      if(bool1 && bool2 && this.user.name && this.user.nname && this.user.gender){
         changeUserInfo(this,JSON.parse(localStorage.getItem('bdi_iot_user')).id,this.user)
       }else{
         alert('修改失败!'+errmsg)
       }
     },
+    //供给接口调用  判断个人信息是否修改成功
     change(bool,errmsg){
       if(bool){
         alert('修改成功！')

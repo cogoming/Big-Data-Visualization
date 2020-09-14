@@ -37,16 +37,23 @@ export default {
   name: "index",
   data(){
     return{
+      //普通用户原密码
       pwd:'',
+      //普通用户新面貌
       newPwd:'',
+      //普通用户确认新密码
       confirmPwd:'',
+      //管理员输入要修改密码的用户名
       adminId:'',
+      //管理员输入修改后的密码
       adminPwd:'',
+      //调取个人信息
       user:JSON.parse(localStorage.getItem('bdi_iot_user'))
 
     }
   },
   methods:{
+    //修改密码请求
     changePwd(){
       if(this.user.jurisdiction==0){
         let bool=/^[a-zA-Z0-9]\w{6,18}$/.test(this.adminPwd)

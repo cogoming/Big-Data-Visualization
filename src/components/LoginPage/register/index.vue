@@ -72,48 +72,79 @@ export default {
   name: "index",
   data(){
     return{
+      //用户名
       user:'',
+      //密码
       pwd:'',
+      //确认密码
       twicePwd:'',
+      //姓名
       name:'',
+      //昵称
       nname:'',
+      //手机号
       phoneNumber:'',
+      //性别
       gender:'',
+      //用户名检查是否合法icon
       userSrc:null,
+      //密码检查是否合法icon
       pwdSrc:null,
+      //确认密码检查是否合法icon
       twicePwdSrc:null,
+      //姓名检查是否合法icon
       nameSrc:null,
+      //昵称检查是否合法icon
       nnameSrc:null,
+      //手机号检查是否合法icon
       phoneNumberSrc:null,
+      //性别检查是否合法icon
       genderSrc:null,
+      //用户名是否合法标志
       userFlag:false,
+      //密码是否合法标志
       pwdFlag:false,
+      //确认面膜是否合法标志
       twicePwdFlag:false,
+      //姓名是否合法标志
       nameFlag:false,
+      //昵称是否合法标志
       nnameFlag:false,
+      //手机号是否合法标志
       phoneNumberFlag:false,
+      //用户名检查icon是否显示
       genderFlag:false,
+      //用户名检查icon是否显示
       userShow:false,
+      //密码检查icon是否显示
       pwdShow:false,
+      //确认密码检查icon是否显示
       twicePwdShow:false,
+      //姓名检查icon是否显示
       nameShow:false,
+      //昵称检查icon是否显示
       nnameShow:false,
+      //手机号检查icon是否显示
       phoneNumberShow:false,
+      //性别检查icon是否显示
       genderShow:false,
     }
   },
   methods: {
-    register(bool){
+    //供给接口调用 判断是否注册成功
+    register(bool,errmsg){
       if(bool){
         alert("注册成功！")
         this.$router.push('/LoginPage')
       }else{
-        alert("注册失败！")
+        alert("注册失败！"+errmsg)
       }
     },
+    //跳转到登录页面
     login() {
       this.$router.push('/LoginPage')
     },
+    //判断all输入项合法  发起注册请求
     registerReq(){
       if(this.userFlag && this.pwdFlag && this.twicePwdFlag && this.nameFlag && this.nnameFlag && this.phoneNumberFlag && this.genderFlag
          && this.$refs.protrol.checked){
@@ -121,8 +152,8 @@ export default {
       }else{
         alert('请检查输入项和是否同意条款和协议')
       }
-
     },
+    //判断用户名是否合法函数
     checkUser(){
       this.userShow=true
       let bool=/^[a-zA-Z0-9]\w{5,10}$/.test(this.user)
@@ -134,6 +165,7 @@ export default {
         this.userSrc=require('../../../assets/img/错.svg')
       }
     },
+    //判断密码是否合法函数
     checkPwd(){
       this.pwdShow=true
       let bool=/^[a-zA-Z0-9]\w{5,18}$/.test(this.pwd)
@@ -145,6 +177,7 @@ export default {
         this.pwdSrc=require('../../../assets/img/错.svg')
       }
     },
+    //判断确认密码是否合法函数
     checkTwicePwd(){
       this.twicePwdShow=true
       if(this.twicePwd==this.pwd && this.pwd){
@@ -155,6 +188,7 @@ export default {
         this.twicePwdSrc=require('../../../assets/img/错.svg')
       }
     },
+    //判断姓名是否合法函数
     checkName(){
       this.nameShow=true
       if(this.name){
@@ -165,6 +199,7 @@ export default {
         this.nameSrc = require('../../../assets/img/错.svg')
       }
     },
+    //判断昵称是否合法函数
     checkNname(){
       this.nnameShow=true
       if(this.nname){
@@ -175,6 +210,7 @@ export default {
         this.nnameSrc=require('../../../assets/img/错.svg')
       }
     },
+    //判断手机号是否合法函数
     checkPhoneNumber(){
       this.phoneNumberShow=true
       let bool=/^1[3-9]\d{9}$/.test(this.phoneNumber)
@@ -186,6 +222,7 @@ export default {
         this.phoneNumberSrc=require('../../../assets/img/错.svg')
       }
     },
+    //判断性别是否合法函数
     checkGender(){
       this.genderShow=true
       if(this.gender){

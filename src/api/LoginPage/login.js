@@ -1,6 +1,6 @@
 import {url} from '../main'
 import axios from  'axios'
-
+//登录请求  请求成功保存用户信息到localstorge
 export function loginRequest(obj){
     let requestUrl=url+'/LoginPage/Login'
     let post={
