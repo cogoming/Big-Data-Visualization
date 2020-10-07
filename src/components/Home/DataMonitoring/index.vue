@@ -741,6 +741,9 @@ export default {
     }, this.homePageDelay)
 
   },
+  beforeDestroy() {
+    clearInterval(this.delay)
+  },
   methods: {
     //图表响应式处理（未启用）
     resizeHandle() {

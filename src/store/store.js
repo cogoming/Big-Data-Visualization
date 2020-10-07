@@ -60,7 +60,25 @@ export default new Vuex.Store({
             },
             viedoUrl: '',
         },
-        importantWarning: [],
+        importantWarning: [
+            {
+                name: '打架',
+                num: 3,
+                time: {
+                    year: 2020,
+                    month: 8,
+                    day: 12,
+                    h: 16,
+                    m: 40,
+                    s: 53
+                },
+                position: {
+                    longitude: 114.40555,
+                    latitude: 22.707533
+                },
+                videoUrl: '',
+            }
+        ],
     },
     mutations: {
         //设置数据时延

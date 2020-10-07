@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="list">
+    <div class="list" style="overflow-y: auto">
       <form ref="checkbox">
         <table border="0" cellpadding="0" cellspacing="0" style="overflow: scroll">
           <tr class="list-head">
@@ -19,7 +19,7 @@
     <div class="bottom">
       <button class="addImport" @click="subImportantWarn" v-if="ifSub">
         <div class="sub-icon"><span style="font-size: 1rem;margin-top: -0.1rem">-</span></div>
-        <div class="addImport-text">删除我的重要预警</div>
+        <div class="addImport-text">删除重要预警</div>
       </button>
       <button v-else class="addImport-submit" @click="submit" >确定</button>
     </div>
@@ -123,12 +123,12 @@ export default {
   display: flex;
   flex-direction: row;
   height: 1.89rem;
-  width: 10rem;
+  width: 8rem;
   justify-content: center;
   align-items: center;
   border: 1px solid #3B86FF;
   border-radius: 0.2rem;
-  margin: 0.8rem 1rem 1rem 20rem;
+  margin: 0rem 0rem 1rem 20rem;
   background: white;
 }
 
@@ -148,12 +148,12 @@ export default {
   display: flex;
   flex-direction: row;
   height: 1.89rem;
-  width: 10rem;
+  width: 8rem;
   justify-content: center;
   align-items: center;
   border: 1px solid #3B86FF;
   border-radius: 0.2rem;
-  margin: 0.8rem 1rem 1rem 20rem;
+  margin: 0rem 0rem 1rem 20rem;
   background: #3B86FF;
   color: white;
 }

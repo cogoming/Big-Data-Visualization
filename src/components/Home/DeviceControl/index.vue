@@ -74,6 +74,9 @@ export default {
       deep: true
     }
   },
+  beforeDestroy() {
+    clearInterval(this.delay)
+  },
   mounted() {
     /*
     * 页面挂载发起一次涉设备状态数据请求并开启定时器

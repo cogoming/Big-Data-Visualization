@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="list">
-      <table border="0" cellpadding="0" cellspacing="0" style="overflow: scroll">
+    <div class="list" style="overflow-y: auto">
+      <table border="0" cellpadding="0" cellspacing="0">
         <tr class="list-head">
           <td class="list-head-text">内容</td>
           <td class="list-head-text">人数</td>
@@ -19,7 +19,7 @@
     <div class="bottom">
       <button class="addImport" @click="addImportantWarn" v-if="ifAdd" ref="msg_add">
         <div class="add-icon"><span style="font-size: 1rem;margin-top: 0.1rem">+</span></div>
-        <div class="addImport-text">新增我的重要预警</div>
+        <div class="addImport-text">新增重要预警</div>
       </button>
       <button v-else class="addImport-submit" @click="submit">确定</button>
     </div>
@@ -28,12 +28,12 @@
 
 <script>
 import {mapState, mapMutations} from 'vuex'
-import {getWarningList,addImportantWarning} from "@/api/ApplicationScenarios/CampusSecurity";
+import {getWarningList, addImportantWarning} from "@/api/ApplicationScenarios/CampusSecurity";
 
 export default {
   name: "index",
-  props:{
-    time:Object
+  props: {
+    time: Object
   },
   data() {
     return {
@@ -52,7 +52,7 @@ export default {
     },
     //获取选中的预警并添加到重要预警列表
     submit() {
-      let index=[]
+      let index = []
       this.ifAdd = true
       var input = document.getElementsByClassName('warn-ckb')
       for (let i = 0; i < input.length; i++) {
@@ -60,22 +60,22 @@ export default {
           index.push(i)
         }
       }
-      addImportantWarning(this.time,index,this)
+      addImportantWarning(this.time, index, this)
     },
   },
-  watch:{
+  watch: {
     //请求参数一旦改变  发起预警列表请求
-    time:{
-      handler(newVal){
-        getWarningList(this,newVal)
+    time: {
+      handler(newVal) {
+        getWarningList(this, newVal)
       },
-      deep:true,
-      immediate:true
+      deep: true,
+      immediate: true
     }
   },
   //页面挂载发起获取预警列表请求
   mounted() {
-    getWarningList(this,this.time)
+    getWarningList(this, this.time)
   }
 }
 </script>
@@ -137,18 +137,20 @@ export default {
   display: flex;
   flex-direction: row;
   height: 1.89rem;
-  width: 10rem;
+  width: 8rem;
   justify-content: center;
   align-items: center;
   border: 1px solid #3B86FF;
   border-radius: 0.2rem;
-  margin: 0.8rem 1rem 1rem 20rem;
+  margin: 0rem 0rem 1rem 20rem;
   background: white;
 }
-.addImport:hover{
+
+.addImport:hover {
   border-color: #3B6BB7;
 }
-.addImport:hover div{
+
+.addImport:hover div {
   border-color: #3B6BB7;
   color: #3B6BB7;
 }
@@ -158,20 +160,22 @@ export default {
   font-weight: 400;
   color: #3B86FF;
 }
-.addImport-submit{
+
+.addImport-submit {
   display: flex;
   flex-direction: row;
   height: 1.89rem;
-  width: 10rem;
+  width: 8rem;
   justify-content: center;
   align-items: center;
   border: 1px solid #3B86FF;
   border-radius: 0.2rem;
-  margin: 0.8rem 1rem 1rem 20rem;
+  margin: 0rem 0rem 1rem 20rem;
   background: #3B86FF;
   color: white;
 }
-.addImport-submit:hover{
+
+.addImport-submit:hover {
   background: #266edd;
 }
 

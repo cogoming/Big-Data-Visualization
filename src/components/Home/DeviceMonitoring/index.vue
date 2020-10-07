@@ -781,6 +781,9 @@ export default {
     var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
     window.addEventListener(resizeEvt, this.resizeHandle, false);
     document.addEventListener('DOMContentLoaded', this.resizeHandle, false);
+  },
+  beforeDestroy() {
+    clearInterval(this.delay)
   }
 }
 </script>

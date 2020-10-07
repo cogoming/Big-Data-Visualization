@@ -62,14 +62,14 @@ export default {
           chartSrc:require('../../../assets/img/Chart blue.svg')
         },
         {
-          name:'上周预警',
+          name:'本周预警',
           num:15,
           decimals:-5.8,
           numStyle:'color:#A3A0FB;',
           chartSrc:require('../../../assets/img/Chart purple.svg')
         },
         {
-          name:'上月预警',
+          name:'本月预警',
           num:21,
           decimals:13.8,
           numStyle:'color:#4AD991;',
