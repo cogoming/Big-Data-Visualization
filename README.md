@@ -10,7 +10,7 @@
 
 ## 2.1注册界面
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
+![img]()
 
  
 
@@ -38,7 +38,7 @@
 
 ## 3.1登录界面
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png)
+![img](md-img/clip_image001.png)
 
 - 登录界面需输入“用户名”和“密码”，验证一致后可进入系统。
 - 点击注册按钮即可跳转至“注册页面”。
@@ -49,7 +49,7 @@
 
 ## 4.1首页界面
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png)
+![img](md-img/clip_image002.png)
 
 - 首页由“菜单栏”、“位置监测”、“设备控制”、“设备检测”、“数据监测”等模块组成
 
@@ -59,7 +59,7 @@
 
 ## 4.2数据时延
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.png)
+![img](md-img/clip_image003.png)
 
  
 
@@ -67,7 +67,7 @@
 
 ## 4.2位置监测
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.png)
+![img](md-img/clip_image004.png)
 
 
 
@@ -77,7 +77,7 @@
 
 ## 4.3设备控制
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.png)
+![img](md-img/clip_image005.png)
 
 - “管理员”用户可通过“设备控制”模块的开关，控制实体设备的开启和关闭。
 
@@ -87,7 +87,7 @@
 
 ## 4.4设备检测
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)
+![img](md-img/clip_image006.png)
 
 - “设备检测”模块的功能为实时显示传感数据。以上对应显示“温度”、“湿度”、“光照”、“三轴加速度(X/Y/Z)”的实时传感器数据。
 
@@ -97,13 +97,13 @@
 
 ## 4.5数据监测
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)
+![img](md-img/clip_image007.png)
 
  
 
 ### 4.5.1温度数据监测
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png)
+![img](md-img/clip_image008.png)
 
 - 该图表显示的是最新的十条温度传感数据（单位为℃）  横坐标日期格式为：月-日  
 
@@ -113,7 +113,7 @@
 
 ### 4.5.2湿度数据监测
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png)
+![img](md-img/clip_image009.png)
 
 - 该图表显示的是最新的十条湿度传感数据（单位为%）  横坐标日期格式为：月-日  
 
@@ -123,7 +123,7 @@
 
 ### 4.5.3光照数据监测
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png)
+![img](md-img/clip_image010.png)
 
 - 该图表显示的是最新的十条光照强度传感数据（单位为Lux）  横坐标日期格式为：月-日  
 
@@ -137,7 +137,7 @@
 
 ## 5.1传感数据可视化
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
+![img](md-img/clip_image011.png)
 
  
 
@@ -172,7 +172,7 @@
 
 ## 5.2轨迹数据可视化
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.png)
+![img](md-img/clip_image012.png)
 
  
 
@@ -186,13 +186,13 @@
 
 ## 6.1校园安全
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image013.png)
+![img](md-img/clip_image013.png)
 
  
 
 ### 6.1.1顶部
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image014.png)
+![img](md-img/clip_image014.png)
 
 - 顶部显示的是今日、本周、本月的预警次数，以及相对昨日、上周、上月的上升或下降的百分比。
 
@@ -200,7 +200,7 @@
 
 ### 6.1.2预警列表
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image015.png)
+![img](md-img/clip_image015.png)
 
  
 
@@ -208,7 +208,7 @@
 - 预警列表显示了预警类型、人数和时间，点击列表中的预警，右边的预警视频和预警位置可以显示出对应的视频片段和预警所在位置。
 - 点击新增重要预警按钮
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image016.png)
+![img](md-img/clip_image016.png)
 
 - 即可勾选需加入重要预警列表的预警，并点击“确认”按钮提交。
 
@@ -216,14 +216,14 @@
 
 ### 6.1.3重要预警列表
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image017.png)
+![img](md-img/clip_image017.png)
 
  
 
 - 左边的预警消息显示的是重要预警预警列表，预警列表显示了预警类型、人数和时间，点击列表中的预警，右边的预警视频和预警位置可以显示出对应的视频片段和预警所在位置。
 - 点击“删除重要预警”按钮
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image018.png)
+![img](md-img/clip_image018.png)
 
 
 
@@ -233,7 +233,7 @@
 
 ### 6.1.4预警视频
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image019.png)
+![img](md-img/clip_image019.png)
 
 
 
@@ -243,7 +243,7 @@
 
 ### 6.1.5预警位置
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image020.png)
+![img](md-img/clip_image020.png)
 
 
 
@@ -253,7 +253,7 @@
 
 ### 6.1.6预警数量
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image021.png)
+![img](md-img/clip_image021.png)
 
 
 
@@ -267,18 +267,18 @@
 
 ## 7.1管理员用户管理
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image022.png)
+![img](md-img/clip_image022.png)
 
 ### 7.1.1显示及编辑个人用户信息
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image023.jpg)
+![img](md-img/clip_image023.jpg)
 
 - 顶部模块显示的是个人信息，包括昵称、用户名、用户权限登记、姓名、性别、手机号等。
 - 点击“编辑我的资料”后即可编辑、修改个人信息
 
  
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image024.png)
+![img](md-img/clip_image024.png)
 
 - 编辑完成后，可点击“提交”按钮完成修改或点击“取消”按钮取消修改。
 
@@ -286,7 +286,7 @@
 
 1.信息编辑
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image025.png)
+![img](md-img/clip_image025.png)
 
 - 管理员点击对应用户的“编辑”按钮，可对该用户的信息进行编辑，包括用户名、姓名、昵称、手机号、性别、权限等。
 
@@ -298,7 +298,7 @@
 
 2.用户删除
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image027.png)
+![img](md-img/clip_image027.png)
 
 - 点击对应用户的“删除”按钮，弹出提示框，你确认要删除20183220095（对应用户用户名）吗？ 点击“确定”，即可成功删除用户。点击“取消”，取消删除用户操作。
 
@@ -308,7 +308,7 @@
 
 3.用户查找
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image028.png)
+![img](md-img/clip_image028.png)
 
 - 用户过多难以在列表中查找时，可通过查询模块查找。首先在输入框中输入需查找用户的用户名，点击“查询”，列表中即可显示目标用户。接下来可进行上述一系列用户管理操作。
 
@@ -316,7 +316,7 @@
 
 ### 7.1.3管理员密码管理
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image029.png)
+![img](md-img/clip_image029.png)
 
 - 管理员在对应输入框内输入需更改“登陆密码”的“用户名”和“新密码”，点击确认修改，即可修改成功。
 
@@ -328,13 +328,13 @@
 
 ### 7.2.1显示及编辑个人用户信息
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image030.png)
+![img](md-img/clip_image030.png)
 
 - 顶部模块显示的是个人信息，包括昵称、用户名、用户权限登记、姓名、性别、手机号等。
 
 - 点击“编辑我的资料”后即可编辑、修改个人信息
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image031.png)
+![img](md-img/clip_image031.png)
 
  
 
@@ -344,7 +344,7 @@
 
 ### 7.2.2密码管理
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image032.png)
+![img](md-img/clip_image032.png)
 
 - 在对应输入框内输入本账户的“原密码”，“新密码”和“确认密码”，输入项皆合法，点击确认修改，即可修改成功。
 
@@ -362,7 +362,7 @@
 
 # 8.用户登出
 
-![img](file:////Users/lebronchao/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.png)
+![img](md-img/clip_image002.png)
 
 - 在任意页面，点击顶部的“退出”按钮，即可退出账户，跳转至登录页面。
 

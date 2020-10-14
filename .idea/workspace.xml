@@ -5,15 +5,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e615f997-32d2-42d7-b0ba-a401f4d62b72" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/md-img/register.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_colorschememapping.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image018.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image022.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image023.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image025.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image026.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image027.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image028.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image029.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image030.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image031.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_image032.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/md-img/clip_themedata.thmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/app.92c01cff.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.b6650df7.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.b6650df7.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.98ab6664.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.98ab6664.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/admin-pwd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/campus-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/campus-data.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/campus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/dataanlysispng.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/datamonitor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/del-important-list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/delay.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/devcontrol.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/devmonitorpng.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/home.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/hum.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/important-warn-list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/login.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/lux.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/map.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/quit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/register.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/temp.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/traj.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-manage-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-manage-alert.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-manage-control.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-manage-query.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-manage-top-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-manage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-pwd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-top-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/user-top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/usermanage-top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/warn-chart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/warn-list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/warn-pos.png" beforeDir="false" afterPath="$PROJECT_DIR$/md-img/clip_image020.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/md-img/warn-vedio.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +111,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/md-img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -128,7 +189,7 @@
       <workItem from="1602592402387" duration="642000" />
       <workItem from="1602639414837" duration="701000" />
       <workItem from="1602640637111" duration="123000" />
-      <workItem from="1602646202662" duration="320000" />
+      <workItem from="1602646202662" duration="1099000" />
     </task>
     <servers />
   </component>
