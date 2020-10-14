@@ -10,7 +10,7 @@
 
 ## 2.1注册界面
 
-![img]()
+![img](md-img/clip_image000.png)
 
  
 
