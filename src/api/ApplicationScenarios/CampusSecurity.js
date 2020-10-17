@@ -3,7 +3,7 @@ import axios from 'axios'
 
 //获取分析数据
 export function getData(obj){
-    let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/DataViusal'
+    let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/DataVisual'
     axios.get(reqUrl).then((res)=>{
         let data=res.data
         obj.cards[0].num=data.todayNum
@@ -44,7 +44,7 @@ export function addImportantWarning(time,index,obj){
             alert('添加成功!')
             getWarningList(obj,obj.time)
         }else{
-            alert('添加失败!'+res.data.errmsg)
+            alert(res.data.errmsg)
         }
     }).catch((err)=>{
         console.log(err)
@@ -59,7 +59,7 @@ export function delImportantWarning(index,obj){
             alert('删除成功!')
             getImportantWarningList(obj)
         }else{
-            alert('删除失败!'+res.data.errmsg)
+            alert(res.data.errmsg)
         }
     }).catch((err)=>{
         console.log(err)

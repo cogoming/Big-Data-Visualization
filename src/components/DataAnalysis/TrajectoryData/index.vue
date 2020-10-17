@@ -9,49 +9,13 @@
 <script src="http://api.map.baidu.com/getscript?v=2.0&ak=lSZms8vUZ0bZns6rVHLWe3RQLaovokQM"></script>
 <script type="text/javascript" src="//api.map.baidu.com/library/TrackAnimation/src/TrackAnimation_min.js"></script>
 <script>
-//import {trajRequest} from '../../../api/HomePage/DataAnalysis'
+import {trajRequest} from '../../../api/HomePage/DataAnalysis'
 
 export default {
   name: "index",
   data() {
     return {
-      path: [
-        {
-          'lng': 114.405112,
-          'lat': 22.709605
-        },
-        {
-          'lng': 114.40478,
-          'lat': 22.710089
-        },
-        {
-          'lng': 114.404856,
-          'lat': 22.710164
-        }, {
-          'lng': 114.405606,
-          'lat': 22.710547
-        }, {
-          'lng': 114.406909,
-          'lat': 22.711168
-        }, {
-          'lng': 114.407839,
-          'lat': 22.711456
-        }, {
-          'lng': 114.409837,
-          'lat': 22.711576
-        }, {
-          'lng': 114.411589,
-          'lat': 22.711601
-        }, {
-          'lng': 114.412932,
-          'lat': 22.711568
-        }, {
-          'lng': 114.412887,
-          'lat': 22.710347
-        }, {
-          'lng': 114.41273,
-          'lat': 22.709055
-        }]
+      path: []
     }
   },
   methods: {
@@ -84,7 +48,7 @@ export default {
     }
   },
   async mounted() {
-    // await trajRequest(this)
+    await trajRequest(this)
     this.mapInit()
   }
 }

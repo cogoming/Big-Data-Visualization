@@ -63,7 +63,9 @@ export default {
   color: #4D4F5C;
 }
 .video-bottom-time{
-  margin: 0 0 0 12.6rem ;
+  flex: 1;
+  justify-content: flex-end;
+  margin-right: 1.2rem;
 }
 .video-time-text{
   font-size: 1.21rem;

@@ -1,4 +1,4 @@
-<template>
+  <template>
   <div>
     <div class="pos-all">
       <div class="pos-title">预警位置</div>

@@ -6,8 +6,8 @@
           <div class="num" :style="numStyle">{{ num }}</div>
           <img class="card-icon" :src=" decimals > 0 ? cardStyle.upSrc : cardStyle.downSrc ">
           <div class="decimals" :style="decimals > 0 ? cardStyle.upColor : cardStyle.downColor">{{
-              Math.abs(decimals)
-            }}%
+              decimals
+            }}
           </div>
         </div>
         <div class="card-left-word">
