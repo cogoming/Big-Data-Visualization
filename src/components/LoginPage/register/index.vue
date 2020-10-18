@@ -10,13 +10,13 @@
         <div class="register-id-container">
           <img src="../../../assets/img/login_people.svg" alt="" class="register-id-icon">
           <div class="register-front-text" style="width: 5rem">用户名:</div>
-          <input class="register-input-l" type="text" placeholder="5-10个字符只能包括字母、数字、下划线" v-model="user" @blur="checkUser">
+          <input class="register-input-l" type="text" placeholder="6-10个字符只能包括字母、数字、下划线" v-model="user" @blur="checkUser">
           <img :src="userSrc" class="img-end" v-if="userShow"/>
         </div>
         <div class="register-password-container">
           <img src="../../../assets/img/login_password.svg" alt="" class="register-password-icon">
           <div class="register-front-text" style="width: 3.6rem">密码:</div>
-          <input class="register-input-l" type="password" placeholder="5-18个字符只能包括字母、数字、下划线" v-model="pwd" @blur="checkPwd">
+          <input class="register-input-l" type="password" placeholder="6-18个字符只能包括字母、数字、下划线" v-model="pwd" @blur="checkPwd">
           <img :src="pwdSrc" class="img-end" v-if="pwdShow"/>
         </div>
         <div class="register-password-container" style="margin-top: 2rem">
