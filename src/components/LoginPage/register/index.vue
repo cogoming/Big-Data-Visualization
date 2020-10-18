@@ -10,47 +10,50 @@
         <div class="register-id-container">
           <img src="../../../assets/img/login_people.svg" alt="" class="register-id-icon">
           <div class="register-front-text" style="width: 5rem">用户名:</div>
-          <input class="register-input-l" type="text" placeholder="6-10个字符只能包括字母、数字、下划线" v-model="user" @blur="checkUser">
-          <img :src="userSrc" class="img-end" v-if="userShow"/>
+          <input class="register-input-l" type="text" placeholder="6-10个字符只能包括字母、数字、下划线" v-model="user.value"
+          >
+          <img :src="user.src" class="img-end" v-if="user.show"/>
         </div>
         <div class="register-password-container">
           <img src="../../../assets/img/login_password.svg" alt="" class="register-password-icon">
           <div class="register-front-text" style="width: 3.6rem">密码:</div>
-          <input class="register-input-l" type="password" placeholder="6-18个字符只能包括字母、数字、下划线" v-model="pwd" @blur="checkPwd">
-          <img :src="pwdSrc" class="img-end" v-if="pwdShow"/>
+          <input class="register-input-l" type="password" placeholder="6-18个字符只能包括字母、数字、下划线" v-model="pwd.value"
+          >
+          <img :src="pwd.src" class="img-end" v-if="pwd.show"/>
         </div>
         <div class="register-password-container" style="margin-top: 2rem">
           <img src="../../../assets/img/login_password.svg" alt="" class="register-password-icon">
           <div class="register-front-text" style="width: 11rem">再次确认密码:</div>
-          <input class="register-input-l" type="password" placeholder="请再次输入您的密码" v-model="twicePwd" @blur="checkTwicePwd">
-          <img :src="twicePwdSrc" class="img-end" v-if="twicePwdShow"/>
+          <input class="register-input-l" type="password" placeholder="请再次输入您的密码" v-model="twicePwd.value"
+          >
+          <img :src="twicePwd.src" class="img-end" v-if="twicePwd.show"/>
         </div>
         <div class="row">
           <div class="row register-input-container">
             <div class="register-input-text">姓名:</div>
-            <input type="text" class="register-input" v-model="name" @blur="checkName">
-            <img :src="nameSrc" class="img-end" v-if="nameShow"/>
+            <input type="text" class="register-input" v-model="name.value">
+            <img :src="name.src" class="img-end" v-if="name.show"/>
           </div>
           <div class="row register-input-container" style="margin-left: 5rem">
             <div class="register-input-text">昵称:</div>
-            <input type="text" class="register-input" v-model="nname" @blur="checkNname">
-            <img :src="nnameSrc" class="img-end" v-if="nnameShow"/>
+            <input type="text" class="register-input" v-model="nname.value">
+            <img :src="nname.src" class="img-end" v-if="nname.show"/>
           </div>
         </div>
         <div class="row">
           <div class="row register-input-container">
             <div class="register-input-text" style="width: 6.8rem">手机号:</div>
-            <input type="text" class="register-input" v-model="phoneNumber" @blur="checkPhoneNumber">
-            <img :src="phoneNumberSrc" class="img-end" v-if="phoneNumberShow" @blur="checkPhoneNumber"/>
+            <input type="text" class="register-input" v-model="phoneNumber.value">
+            <img :src="phoneNumber.src" class="img-end" v-if="phoneNumber.show"/>
           </div>
           <div class="row register-input-container" style="margin-left: 5rem">
             <div class="register-input-text">性别:</div>
-            <select name="gender" id="gender" class="gender-select" v-model="gender" @blur="checkGender">
+            <select name="gender" id="gender" class="gender-select" v-model="gender.value">
               <option value=""></option>
               <option value="男">男</option>
               <option value="女">女</option>
             </select>
-            <img :src="genderSrc" class="img-end" v-if="genderShow" style="margin-top: 0rem"/>
+            <img :src="gender.src" class="img-end" v-if="gender.show" style="margin-top: 0rem"/>
           </div>
         </div>
         <div class="row" style="margin-top: 3rem">
@@ -68,76 +71,70 @@
 
 <script>
 import {registerRequest} from '../../../api/LoginPage/register'
+
 export default {
   name: "index",
-  data(){
-    return{
+  data() {
+    return {
       //用户名
-      user:'',
+      user: {
+        value: '',
+        src: null,
+        flag: false,
+        show: false
+      },
       //密码
-      pwd:'',
+      pwd: {
+        value: '',
+        src: null,
+        flag: false,
+        show: false
+      },
       //确认密码
-      twicePwd:'',
+      twicePwd: {
+        value: '',
+        src: null,
+        flag: false,
+        show: false
+      },
       //姓名
-      name:'',
+      name: {
+        value: '',
+        src: null,
+        flag: false,
+        show: false
+      },
       //昵称
-      nname:'',
+      nname: {
+        value: '',
+        src: null,
+        flag: false,
+        show: false
+      },
       //手机号
-      phoneNumber:'',
+      phoneNumber: {
+        value: '',
+        src: null,
+        flag: false,
+        show: false
+      },
       //性别
-      gender:'',
-      //用户名检查是否合法icon
-      userSrc:null,
-      //密码检查是否合法icon
-      pwdSrc:null,
-      //确认密码检查是否合法icon
-      twicePwdSrc:null,
-      //姓名检查是否合法icon
-      nameSrc:null,
-      //昵称检查是否合法icon
-      nnameSrc:null,
-      //手机号检查是否合法icon
-      phoneNumberSrc:null,
-      //性别检查是否合法icon
-      genderSrc:null,
-      //用户名是否合法标志
-      userFlag:false,
-      //密码是否合法标志
-      pwdFlag:false,
-      //确认面膜是否合法标志
-      twicePwdFlag:false,
-      //姓名是否合法标志
-      nameFlag:false,
-      //昵称是否合法标志
-      nnameFlag:false,
-      //手机号是否合法标志
-      phoneNumberFlag:false,
-      //用户名检查icon是否显示
-      genderFlag:false,
-      //用户名检查icon是否显示
-      userShow:false,
-      //密码检查icon是否显示
-      pwdShow:false,
-      //确认密码检查icon是否显示
-      twicePwdShow:false,
-      //姓名检查icon是否显示
-      nameShow:false,
-      //昵称检查icon是否显示
-      nnameShow:false,
-      //手机号检查icon是否显示
-      phoneNumberShow:false,
-      //性别检查icon是否显示
-      genderShow:false,
+      gender: {
+        value: '',
+        src: null,
+        flag: false,
+        show: false
+      }
     }
   },
   methods: {
     //供给接口调用 判断是否注册成功
-    register(bool,errmsg){
-      if(bool){
+    register(bool, errmsg) {
+      if (bool) {
         alert("注册成功！")
         this.$router.push('/LoginPage')
-      }else{
-        alert("注册失败！"+errmsg)
+      } else {
+        alert("注册失败！" + errmsg)
       }
     },
     //跳转到登录页面
@@ -145,93 +142,80 @@ export default {
       this.$router.push('/LoginPage')
     },
     //判断all输入项合法  发起注册请求
-    registerReq(){
-      if(this.userFlag && this.pwdFlag && this.twicePwdFlag && this.nameFlag && this.nnameFlag && this.phoneNumberFlag && this.genderFlag
-         && this.$refs.protrol.checked){
+    registerReq() {
+      if (this.user.flag && this.pwd.flag && this.twicePwd.flag && this.name.flag && this.nname.flag && this.phoneNumber.flag && this.gender.flag && this.$refs.protrol.checked) {
         registerRequest(this)
-      }else{
+      } else {
         alert('请检查输入项和是否同意条款和协议')
       }
     },
-    //判断用户名是否合法函数
-    checkUser(){
-      this.userShow=true
-      let bool=/^[a-zA-Z0-9]\w{5,10}$/.test(this.user)
-      if(bool){
-        this.userFlag=true
-        this.userSrc=require('../../../assets/img/对.svg')
-      }else{
-        this.userFlag=false
-        this.userSrc=require('../../../assets/img/错.svg')
+    check(bool, obj) {
+      obj.show = true
+      if (bool) {
+        obj.flag = true
+        obj.src = require('../../../assets/img/对.svg')
+      } else {
+        obj.flag = false
+        obj.src = require('../../../assets/img/错.svg')
       }
+    }
+  },
+  watch: {
+    user: {
+      //判断用户名是否合法函数
+      handler(newVal) {
+        let bool = /^[a-zA-Z0-9]\w{5,10}$/.test(newVal.value)
+        this.check(bool, newVal)
+      },
+      deep: true
     },
-    //判断密码是否合法函数
-    checkPwd(){
-      this.pwdShow=true
-      let bool=/^[a-zA-Z0-9]\w{5,18}$/.test(this.pwd)
-      if(bool){
-        this.pwdFlag=true
-        this.pwdSrc=require('../../../assets/img/对.svg')
-      }else{
-        this.pwdFlag=false
-        this.pwdSrc=require('../../../assets/img/错.svg')
-      }
+    pwd: {
+      handler(newVal) {
+        //判断密码是否合法函数
+        let bool = /^[a-zA-Z0-9]\w{5,18}$/.test(newVal.value)
+        this.check(bool, newVal)
+      },
+      deep: true
     },
-    //判断确认密码是否合法函数
-    checkTwicePwd(){
-      this.twicePwdShow=true
-      if(this.twicePwd==this.pwd && this.pwd){
-        this.twicePwdFlag=true
-        this.twicePwdSrc=require('../../../assets/img/对.svg')
-      }else{
-        this.twicePwdFlag=false
-        this.twicePwdSrc=require('../../../assets/img/错.svg')
-      }
+    twicePwd: {
+      //判断确认密码是否合法函数
+      handler(newVal) {
+        let bool = (newVal.value === this.pwd.value && this.pwd.value) ? true : false
+        this.check(bool, newVal)
+      },
+      deep: true
     },
-    //判断姓名是否合法函数
-    checkName(){
-      this.nameShow=true
-      if(this.name){
-        this.nameFlag=true
-        this.nameSrc=require('../../../assets/img/对.svg')
-      }else {
-        this.nameFlag=false
-        this.nameSrc = require('../../../assets/img/错.svg')
-      }
+    name: {
+      //判断姓名是否合法函数
+      handler(newVal) {
+        let bool = newVal.value ? true : false
+        this.check(bool, newVal)
+      },
+      deep: true
     },
-    //判断昵称是否合法函数
-    checkNname(){
-      this.nnameShow=true
-      if(this.nname){
-        this.nnameFlag=true
-        this.nnameSrc=require('../../../assets/img/对.svg')
-      }else{
-        this.nnameFlag=true
-        this.nnameSrc=require('../../../assets/img/错.svg')
-      }
+    nname: {
+      //判断昵称是否合法函数
+      handler(newVal) {
+        let bool = newVal.value ? true : false
+        this.check(bool, newVal)
+      },
+      deep: true
     },
-    //判断手机号是否合法函数
-    checkPhoneNumber(){
-      this.phoneNumberShow=true
-      let bool=/^1[3-9]\d{9}$/.test(this.phoneNumber)
-      if(bool){
-        this.phoneNumberFlag=true
-        this.phoneNumberSrc=require('../../../assets/img/对.svg')
-      }else{
-        this.phoneNumberFlag=false
-        this.phoneNumberSrc=require('../../../assets/img/错.svg')
-      }
+    phoneNumber: {
+      //判断手机号是否合法函数
+      handler(newVal) {
+        let bool = /^1[3-9]\d{9}$/.test(newVal.value)
+        this.check(bool, newVal)
+      },
+      deep: true
     },
-    //判断性别是否合法函数
-    checkGender(){
-      this.genderShow=true
-      if(this.gender){
-        this.genderFlag=true
-        this.genderSrc=require('../../../assets/img/对.svg')
-      }else{
-        this.genderFlag=false
-        this.genderSrc=require('../../../assets/img/错.svg')
-      }
+    gender: {
+      //判断性别是否合法函数
+      handler(newVal) {
+        let bool = newVal.value ? true : false
+        this.check(bool, newVal)
+      },
+      deep: true
     }
   }
 }
@@ -302,7 +286,7 @@ export default {
   width: 3.17rem;
   font-size: 1.08rem;
   font-weight: 400;
-  color:#436496;
+  color: #436496;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -369,6 +353,7 @@ export default {
   margin-left: 9rem;
   text-decoration: underline;
 }
+
 .img-end {
   width: 1rem;
   height: 1rem;
