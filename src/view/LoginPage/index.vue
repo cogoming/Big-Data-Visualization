@@ -2,7 +2,7 @@
   <div>
     <div style="display: flex;flex-direction: row">
       <img src="../.././assets/img/login_img.png" alt="" class="login-img">
-      <router-view/>
+      <router-view style="flex: 1"/>
     </div>
   </div>
 </template>

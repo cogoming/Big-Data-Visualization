@@ -4,8 +4,7 @@
     </div>
   </div>
 </template>
-<script type="text/javascript"
-        src="http://api.map.baidu.com/getscript?type=webgl&v=1.0&ak=lSZms8vUZ0bZns6rVHLWe3RQLaovokQM&services=&t=20200825103044"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/getscript?type=webgl&v=1.0&ak=lSZms8vUZ0bZns6rVHLWe3RQLaovokQM&services=&t=20200825103044"></script>
 <script src="http://api.map.baidu.com/getscript?v=2.0&ak=lSZms8vUZ0bZns6rVHLWe3RQLaovokQM"></script>
 <script type="text/javascript" src="//api.map.baidu.com/library/TrackAnimation/src/TrackAnimation_min.js"></script>
 <script>
@@ -15,11 +14,10 @@ export default {
   name: "index",
   data() {
     return {
-      path: []
     }
   },
   methods: {
-    async mapInit() {
+    mapInit(data) {
       var bmap = new BMapGL.Map("tra-map");
       bmap.centerAndZoom(new BMapGL.Point(114.40555, 22.707533), 16);    // 初始化地图，设置中心点坐标和地图级别
       bmap.enableScrollWheelZoom(true);// 开启鼠标滚轮缩放
@@ -30,11 +28,12 @@ export default {
       let navi3DCtrl = new BMapGL.NavigationControl3D();  // 添加3D控件
       bmap.addControl(navi3DCtrl);
 
-      var points = [];
+      let points = [];
 
-      for (var i = this.path.length-1; i >=0; i--) {
-        points.push(new BMapGL.Point(this.path[i].lng, this.path[i].lat));
+      for (let i = 0; i <data.length; i++) {
+        points.push(new BMapGL.Point(data[i].lng,data[i].lat))
       }
+      console.log(points)
       var pl = new BMapGL.Polyline(points);
       var trackAni = new BMapGLLib.TrackAnimation(bmap, pl, {
         overallView: true, // 动画完成后自动调整视野到总览
@@ -47,9 +46,8 @@ export default {
 
     }
   },
-  async mounted() {
-    await trajRequest(this)
-    this.mapInit()
+  mounted() {
+    trajRequest(this)
   }
 }
 </script>

@@ -4,9 +4,9 @@
       <div class="chart-top">
         <div class="chart-title">预警数量</div>
         <div class="chart-tab">
-          <div class="chart-tab-text" ref="year" @click="year">最近一年</div>
-          <div class="chart-tab-text" ref="month" @click="month">最近一个月</div>
-          <div class="chart-tab-text" ref="week" @click="week" style="border: none">最近一周</div>
+          <div class="chart-tab-text" ref="year" @click="yearReq">最近一年</div>
+          <div class="chart-tab-text" ref="month" @click="monthReq">最近一个月</div>
+          <div class="chart-tab-text" ref="week" @click="weekReq" style="border: none">最近一周</div>
         </div>
       </div>
       <v-chart id="chart-echart" :options="warningOption"/>
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import {weekRequest,monthRequest,yearRequest} from "@/api/ApplicationScenarios/CampusSecurity";
+
 export default {
   name: "index",
   data(){
@@ -155,22 +157,40 @@ export default {
       this.$refs.month.style.color='#A0A0AD'
       this.$refs.week.style.color='#A0A0AD'
     },
+    weekReq(){
+      weekRequest(this)
+    },
+    monthReq(){
+      monthRequest(this)
+    },
+    yearReq(){
+      yearRequest(this)
+    },
     //制作点击效果
     //先将所有选项文字变为未选中颜色  再把选中的选项文字变为选中效果的颜色
-    year(){
+    year(data){
       this.notActive()
       this.$refs.year.style.color='#4C5566'
-      this.warningOption.yAxis[0].max=1000
+      this.setChart(data)
     },
-    month(){
+    month(data){
       this.notActive()
       this.$refs.month.style.color='#4C5566'
-      this.warningOption.yAxis[0].max=100
+      this.setChart(data)
+      this.warningOption.xAxis[0].axisLabel.interval=4
     },
-    week(){
+    week(data){
       this.notActive()
       this.$refs.week.style.color='#4C5566'
-      this.warningOption.yAxis[0].max=10
+      this.setChart(data)
+    },
+    setChart(data){
+      this.warningOption.xAxis[0].axisLabel.interval=0
+      this.warningOption.yAxis[0].max=data.max
+      this.warningOption.xAxis[0].data.length=0
+      this.warningOption.xAxis[0].data=data.time
+      this.warningOption.series[0].data.length=0
+      this.warningOption.series[0].data=data.value
     },
     //监听窗口变化后执行图标初始化
     resizeHandle(){
@@ -180,7 +200,7 @@ export default {
   },
   mounted() {
     //页面挂载默认选中这一周的数据
-    this.week()
+    this.weekReq()
     //监听窗口变化后执行图标初始化
     var resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
     window.addEventListener(resizeEvt, this.resizeHandle, false);

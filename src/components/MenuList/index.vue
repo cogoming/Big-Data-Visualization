@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <div class="menu-icon" style="display: flex;flex-direction: row;margin-top: 0.26rem">
-      <img src="../../assets/img/sztu.png" class="school"/>
-      <div style="font-size: 1.3rem">BDI-IoT</div>
-    </div>
-    <router-link v-for="item in Menus" class="menu-list" :to="item.path" :key="item.index"
-                 active-class="menu-list-active">
-      <img class="list-icon" :src='item.src'/>{{ item.name }}
-    </router-link>
+<div>
+  <div class="menu-icon" style="display: flex; flex-direction: row; margin-top: 0.26rem">
+    <img src="../../assets/img/sztu.png" class="school" />
+    <div style="font-size: 1.3rem">BDI-IoT</div>
   </div>
+  <router-link v-for="item in Menus" class="menu-list" :to="item.path" :key="item.index" active-class="menu-list-active">
+    <img class="list-icon" :src="item.src" />{{ item.name }}
+  </router-link>
+</div>
 </template>
 
 <script>
@@ -18,40 +17,47 @@ export default {
     return {
       //菜单项配置  src图标位置  name名称  path路由配置
       Menus: [{
-        name: '首页',
-        src: require('../../assets/img/首页-选中.svg'),
-        path: '/HomePage/Home'
-      },
-        {
-          name: '数据分析',
-          src: require('../../assets/img/数据分析.svg'),
-          path: '/HomePage/DataAnalysis'
+          name: "首页",
+          src: require("../../assets/img/首页-选中.svg"),
+          path: "/HomePage/Home",
         },
         {
-          name:'Grafana',
-          src:require('../../assets/img/仪表盘.svg'),
-          path: '/HomePage/Grafana'
+          name: "数据分析",
+          src: require("../../assets/img/数据分析.svg"),
+          path: "/HomePage/DataAnalysis",
         },
         {
-          name: '应用场景',
-          src: require('../../assets/img/场景.svg'),
-          path: '/HomePage/ApplicationScenarios'
-        }, {
-          name: '设备管理',
-          src: require('../../assets/img/设备.svg'),
-          path: '/HomePage/DeviceManagement'
-        }, {
-          name: '用户管理',
-          src: require('../../assets/img/用户.svg'),
-          path: '/HomePage/UserManagement'
-        }],
-    }
-  }
-}
+          name: "Grafana",
+          src: require("../../assets/img/仪表盘.svg"),
+          path: "/HomePage/Grafana",
+        },
+        {
+          name: "应用场景",
+          src: require("../../assets/img/场景.svg"),
+          path: "/HomePage/ApplicationScenarios",
+        },
+        {
+          name: "设备管理",
+          src: require("../../assets/img/设备.svg"),
+          path: "/HomePage/DeviceManagement",
+        },
+        {
+          name: "用户管理",
+          src: require("../../assets/img/用户.svg"),
+          path: "/HomePage/UserManagement",
+        },
+        {
+          name: "道闸开关",
+          src: require("../../assets/img/开关.svg"),
+          path: "/HomePage/Switch",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
-
 .school {
   height: 1.3rem;
   width: 1.3rem;

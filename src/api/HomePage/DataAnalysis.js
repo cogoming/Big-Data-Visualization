@@ -77,19 +77,12 @@ export function getSensorData(obj) {
 
 export function trajRequest(obj){
     let requestUrl=url+'/HomePage/DataAnalysis/TrajectoryData'
+    let data
     axios.get(requestUrl).then((res)=>{
-        obj.path=null
-        obj.path=[]
-        for(let i=0;i<res.data.path.length;i++){
-            obj.path.push({
-                lng:res.data.path[i].lng,
-                lat:res.data.path[i].lat
-            })
-        }
+        data=res.data.path
     }).catch((err)=>{
         console.log(err)
     }).finally(()=>{
-        obj.mapInit()
-        console.log(obj.path)
+        obj.mapInit(data)
     })
 }

@@ -65,3 +65,42 @@ export function delImportantWarning(index,obj){
         console.log(err)
     })
 }
+
+//最近一周统计图
+export function weekRequest(obj){
+    let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/Chart/Week'
+    let data
+    axios.get(reqUrl).then((res)=>{
+        data=res.data
+    }).catch((err)=>{
+        console.log(err)
+    }).finally(()=>{
+        obj.week(data)
+    })
+}
+
+//最近一月统计图
+export function monthRequest(obj){
+    let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/Chart/Month'
+    let data
+    axios.get(reqUrl).then((res)=>{
+        data=res.data
+    }).catch((err)=>{
+        console.log(err)
+    }).finally(()=>{
+        obj.month(data)
+    })
+}
+
+//最近一年统计图
+export function yearRequest(obj){
+    let reqUrl=url+'/HomePage/ApplicationScenarios/CampusSecurity/Chart/Year'
+    let data
+    axios.get(reqUrl).then((res)=>{
+        data=res.data
+    }).catch((err)=>{
+        console.log(err)
+    }).finally(()=>{
+        obj.year(data)
+    })
+}
